@@ -9,11 +9,37 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Guiding The <span className="text-primary">Lost Generation</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-xl text-muted-foreground leading-relaxed mb-8">
             In today's society, men are struggling to find their purpose, build wealth, and embody 
             true masculinity. MaleMindCollective provides the roadmap to help you navigate modern 
             challenges and build the life you deserve.
           </p>
+        </div>
+
+        {/* Mission Statement */}
+        <div className="max-w-5xl mx-auto mb-20">
+          <div className="bg-gradient-card p-8 md:p-12 rounded-xl shadow-card border border-primary/20">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold mb-4 text-primary">My Mission</h3>
+              <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full"></div>
+            </div>
+            <div className="prose prose-lg max-w-none text-center">
+              <p className="text-lg leading-relaxed text-foreground mb-6">
+                I started MaleMindCollective because I witnessed too many good men being left behind by society. 
+                Men who were once the backbone of communities are now struggling in silence, abandoned by a world 
+                that no longer values traditional masculine virtues while offering no clear alternative path forward.
+              </p>
+              <p className="text-lg leading-relaxed text-foreground mb-6">
+                I've seen friends, brothers, and fathers lose their way—caught between outdated expectations and 
+                modern confusion. They're told their natural instincts are wrong, their desire to provide and protect 
+                is toxic, yet given no guidance on how to channel their masculine energy productively in today's world.
+              </p>
+              <p className="text-lg leading-relaxed text-primary font-semibold">
+                "My mission is simple: to provide the brotherhood, mentorship, and practical tools that modern men 
+                desperately need to reclaim their power, build authentic wealth, and create lives of purpose and meaning."
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

@@ -12,7 +12,7 @@ const Footer = () => {
               Physicality, Wealth Building, and Modern Masculinity.
             </p>
             <div className="text-sm text-muted-foreground">
-              © 2024 MaleMindCollective. All rights reserved.
+              © 2024 MaleMindCollective. Founded and owned by [Your Name]. All rights reserved.
             </div>
           </div>
 
@@ -30,6 +30,9 @@ const Footer = () => {
               </a>
               <a href="#pillars" className="block text-muted-foreground hover:text-primary transition-smooth">
                 5 Pillars
+              </a>
+              <a href="#testimonials" className="block text-muted-foreground hover:text-primary transition-smooth">
+                Reviews
               </a>
               <a href="#contact" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Contact

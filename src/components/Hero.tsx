@@ -4,13 +4,15 @@ import heroImage from "@/assets/hero-image.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden" role="banner" aria-label="Hero section">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Success and leadership transformation"
+          alt="Powerful masculine figure representing transformation and success"
           className="w-full h-full object-cover opacity-30"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-hero"></div>
       </div>
@@ -30,13 +32,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-              Start Your Transformation
-              <ArrowRight className="ml-2" size={20} />
+            <Button variant="hero" size="lg" className="text-lg px-8 py-6" asChild>
+              <a href="#contact" aria-label="Start your transformation journey">
+                Start Your Transformation
+                <ArrowRight className="ml-2" size={20} />
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-              <PlayCircle className="mr-2" size={20} />
-              Watch Free Training
+            <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
+              <a href="#about" aria-label="Watch free training video">
+                <PlayCircle className="mr-2" size={20} />
+                Watch Free Training
+              </a>
             </Button>
           </div>
 

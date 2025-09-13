@@ -33,8 +33,10 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <Button variant="hero" size="sm">
-              Get Started
+            <Button variant="hero" size="sm" asChild>
+              <a href="#contact" aria-label="Get started with transformation">
+                Get Started
+              </a>
             </Button>
           </nav>
 
@@ -61,8 +63,10 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <Button variant="hero" size="sm" className="self-start">
-                Get Started
+              <Button variant="hero" size="sm" className="self-start" asChild>
+                <a href="#contact" aria-label="Get started with transformation">
+                  Get Started
+                </a>
               </Button>
             </div>
           </nav>

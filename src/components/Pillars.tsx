@@ -115,12 +115,12 @@ const Pillars = () => {
               to build excellence in every area of your life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-premium hover:scale-105 transform transition-smooth">
+              <a href="#contact" className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-premium hover:scale-105 transform transition-smooth text-center">
                 Start Your Journey Today
-              </button>
-              <button className="border border-primary/20 bg-transparent text-foreground px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-smooth">
+              </a>
+              <a href="#contact" className="border border-primary/20 bg-transparent text-foreground px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-smooth text-center">
                 Download Free Guide
-              </button>
+              </a>
             </div>
           </div>
         </div>

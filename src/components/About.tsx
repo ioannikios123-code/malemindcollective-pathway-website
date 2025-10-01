@@ -83,8 +83,8 @@ const About = () => {
               </div>
             </div>
 
-            <Button variant="premium" size="lg">
-              Learn More About Our Mission
+            <Button variant="premium" size="lg" asChild>
+              <a href="#contact">Learn More About Our Mission</a>
             </Button>
           </div>
 

@@ -59,8 +59,8 @@ const Contact = () => {
                   Submit your questions through our exclusive Q&A platform and get detailed 
                   responses from our coaching team.
                 </p>
-                <Button variant="premium" className="w-full">
-                  Access Q&A Platform
+                <Button variant="premium" className="w-full" asChild>
+                  <a href="mailto:hello@malemindcollective.com">Access Q&A Platform</a>
                 </Button>
               </CardContent>
             </Card>
@@ -80,8 +80,8 @@ const Contact = () => {
                   Let's talk about where you are now, where you want to be, and the best 
                   path to get there.
                 </p>
-                <Button variant="hero" className="w-full">
-                  Schedule Free Call
+                <Button variant="hero" className="w-full" asChild>
+                  <a href="mailto:hello@malemindcollective.com">Schedule Free Call</a>
                 </Button>
               </CardContent>
             </Card>
@@ -100,8 +100,8 @@ const Contact = () => {
                 <p className="text-muted-foreground mb-4">
                   Email: hello@malemindcollective.com
                 </p>
-                <Button variant="outline" className="w-full">
-                  Send Email
+                <Button variant="outline" className="w-full" asChild>
+                  <a href="mailto:hello@malemindcollective.com">Send Email</a>
                 </Button>
               </CardContent>
             </Card>

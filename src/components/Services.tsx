@@ -84,8 +84,8 @@ const Services = () => {
                   ))}
                 </div>
                 <div className="text-2xl font-bold text-primary mb-4">{service.price}</div>
-                <Button variant="premium" className="w-full">
-                  Learn More
+                <Button variant="premium" className="w-full" asChild>
+                  <a href="#contact">Learn More</a>
                 </Button>
               </CardContent>
             </Card>
@@ -96,8 +96,8 @@ const Services = () => {
           <p className="text-lg mb-6 text-muted-foreground">
             Not sure which program is right for you?
           </p>
-          <Button variant="hero" size="lg">
-            Schedule Free Consultation
+          <Button variant="hero" size="lg" asChild>
+            <a href="#contact">Schedule Free Consultation</a>
           </Button>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Footer = () => {
               Physicality, Wealth Building, and Modern Masculinity.
             </p>
             <div className="text-sm text-muted-foreground">
-              © 2024 MaleMindCollective. Founded and owned by [Your Name]. All rights reserved.
+              © 2024 MaleMindCollective. All rights reserved.
             </div>
           </div>
 
@@ -43,19 +43,19 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Programs</h4>
             <div className="space-y-2">
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
                 1-on-1 Coaching
               </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Digital Courses
               </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Masterclasses
               </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Group Programs
               </a>
-              <a href="#" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
                 90-Day Challenge
               </a>
             </div>

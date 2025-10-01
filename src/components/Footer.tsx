@@ -12,7 +12,7 @@ const Footer = () => {
               Physicality, Wealth Building, and Modern Masculinity.
             </p>
             <div className="text-sm text-muted-foreground">
-              © 2024 MaleMindCollective. All rights reserved.
+              © {new Date().getFullYear()} MaleMindCollective. All rights reserved.
             </div>
           </div>
 

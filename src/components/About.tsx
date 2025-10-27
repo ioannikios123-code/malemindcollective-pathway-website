@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Target, Users, Trophy } from "lucide-react";
+import missionImg from "@/assets/about-mission.jpg";
 
 const About = () => {
   return (
@@ -43,7 +44,16 @@ const About = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
+          {/* Mission Image */}
+          <div className="order-2 lg:order-1">
+            <img 
+              src={missionImg} 
+              alt="Brotherhood and mentorship - men supporting each other"
+              className="rounded-xl shadow-premium w-full h-auto"
+            />
+          </div>
+
+          <div className="space-y-8 order-1 lg:order-2">
             <div className="flex items-start space-x-4">
               <div className="bg-primary/10 p-3 rounded-lg">
                 <Target className="text-primary" size={24} />
@@ -87,7 +97,10 @@ const About = () => {
               <a href="#contact">Learn More About Our Mission</a>
             </Button>
           </div>
+        </div>
 
+        {/* The Problem Section */}
+        <div className="mt-16">
           <div className="bg-gradient-card p-8 rounded-xl shadow-card">
             <h3 className="text-2xl font-bold mb-6">The Problem</h3>
             <div className="space-y-4 text-muted-foreground">

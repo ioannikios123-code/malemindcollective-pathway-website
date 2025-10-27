@@ -1,5 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Heart, Dumbbell, DollarSign, Shield } from "lucide-react";
+import mindsetImg from "@/assets/pillars/mindset.jpg";
+import spiritualImg from "@/assets/pillars/spiritual.jpg";
+import physicalImg from "@/assets/pillars/physical.jpg";
+import wealthImg from "@/assets/pillars/wealth.jpg";
+import masculinityImg from "@/assets/pillars/masculinity.jpg";
 
 const Pillars = () => {
   const pillars = [
@@ -7,6 +12,7 @@ const Pillars = () => {
       icon: Brain,
       title: "Mindset Mastery",
       description: "Develop unshakeable confidence and mental resilience",
+      image: mindsetImg,
       details: [
         "Overcome limiting beliefs and self-doubt",
         "Build unstoppable confidence in any situation",
@@ -18,6 +24,7 @@ const Pillars = () => {
       icon: Heart,
       title: "Spiritual Foundation",
       description: "Connect with your deeper purpose and meaning",
+      image: spiritualImg,
       details: [
         "Discover your life's true purpose and calling",
         "Develop inner peace and spiritual practices",
@@ -29,6 +36,7 @@ const Pillars = () => {
       icon: Dumbbell,
       title: "Physical Excellence",
       description: "Build a strong, healthy, and attractive physique",
+      image: physicalImg,
       details: [
         "Optimize your fitness and nutrition for peak performance",
         "Develop discipline through physical challenges",
@@ -40,6 +48,7 @@ const Pillars = () => {
       icon: DollarSign,
       title: "Wealth Building",
       description: "Master money and create multiple income streams",
+      image: wealthImg,
       details: [
         "Develop a millionaire mindset about money",
         "Learn proven investment and business strategies",
@@ -51,6 +60,7 @@ const Pillars = () => {
       icon: Shield,
       title: "Modern Masculinity",
       description: "Embody authentic masculine leadership and strength",
+      image: masculinityImg,
       details: [
         "Understand and embrace healthy masculine traits",
         "Develop leadership skills in all areas of life",
@@ -78,10 +88,19 @@ const Pillars = () => {
           {pillars.map((pillar, index) => (
             <Card 
               key={index} 
-              className={`bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth ${
+              className={`bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth overflow-hidden group ${
                 index === 4 ? 'lg:col-span-2 xl:col-span-1' : ''
               }`}
             >
+              {/* Pillar Image */}
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={pillar.image} 
+                  alt={pillar.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              
               <CardHeader className="text-center pb-4">
                 <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <pillar.icon className="text-primary" size={32} />

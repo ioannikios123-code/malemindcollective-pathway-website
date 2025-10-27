@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, BookOpen, Video, Users, DollarSign, Zap } from "lucide-react";
+import coachingImg from "@/assets/services/coaching.jpg";
+import coursesImg from "@/assets/services/digital-courses.jpg";
+import masterclassImg from "@/assets/services/masterclasses.jpg";
+import groupImg from "@/assets/services/group-programs.jpg";
+import wealthImg from "@/assets/services/wealth-building.jpg";
+import transformationImg from "@/assets/services/transformation.jpg";
 
 const Services = () => {
   const services = [
@@ -9,42 +15,48 @@ const Services = () => {
       title: "1-on-1 Coaching",
       description: "Personal transformation sessions tailored to your specific needs and goals",
       features: ["Weekly 60-min sessions", "Custom action plans", "24/7 text support", "Goal tracking"],
-      price: "From $297/month"
+      price: "From $297/month",
+      image: coachingImg
     },
     {
       icon: BookOpen,
       title: "Digital Courses",
       description: "Comprehensive online programs covering all aspects of masculine development",
       features: ["5 Core modules", "Lifetime access", "Downloadable resources", "Community access"],
-      price: "From $197 one-time"
+      price: "From $197 one-time",
+      image: coursesImg
     },
     {
       icon: Video,
       title: "Masterclasses",
       description: "Deep-dive sessions on specific topics like wealth building and mindset",
       features: ["Live Q&A sessions", "Replay access", "PDF workbooks", "Implementation guides"],
-      price: "From $97 each"
+      price: "From $97 each",
+      image: masterclassImg
     },
     {
       icon: Users,
       title: "Group Programs",
       description: "Small cohort coaching for accountability and brotherhood",
       features: ["8-week programs", "Max 10 participants", "Weekly group calls", "Peer support"],
-      price: "From $497/program"
+      price: "From $497/program",
+      image: groupImg
     },
     {
       icon: DollarSign,
       title: "Wealth Building Intensive",
       description: "Focused program on passive income, investments, and financial freedom",
       features: ["Investment strategies", "Passive income blueprints", "Budgeting systems", "Wealth mindset"],
-      price: "From $697 one-time"
+      price: "From $697 one-time",
+      image: wealthImg
     },
     {
       icon: Zap,
       title: "90-Day Transformation",
       description: "Complete lifestyle overhaul covering all 5 pillars of development",
       features: ["All-inclusive program", "Personal coach", "Daily check-ins", "Guarantee results"],
-      price: "From $1,997"
+      price: "From $1,997",
+      image: transformationImg
     }
   ];
 
@@ -64,7 +76,16 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth">
+            <Card key={index} className="bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth overflow-hidden group">
+              {/* Service Image */}
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              
               <CardHeader>
                 <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
                   <service.icon className="text-primary" size={24} />

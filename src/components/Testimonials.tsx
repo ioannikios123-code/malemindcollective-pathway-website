@@ -1,17 +1,25 @@
 import { Star } from "lucide-react";
+import marcusImg from "@/assets/testimonials/marcus-rodriguez.jpg";
+import davidImg from "@/assets/testimonials/david-chen.jpg";
+import jamesImg from "@/assets/testimonials/james-williams.jpg";
+import alexImg from "@/assets/testimonials/alex-thompson.jpg";
+import robertImg from "@/assets/testimonials/robert-garcia.jpg";
+import michaelImg from "@/assets/testimonials/michael-johnson.jpg";
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: "Marcus Rodriguez",
       age: "32, Entrepreneur",
+      image: marcusImg,
       content: "MaleMindCollective completely transformed my approach to wealth building. I went from living paycheck to paycheck to building multiple income streams. The mindset shifts alone were worth it.",
       rating: 5,
       transformation: "Built 6-figure business in 8 months"
     },
     {
       name: "David Chen",
-      age: "28, Software Engineer", 
+      age: "28, Software Engineer",
+      image: davidImg,
       content: "I was lost and had no direction after college. This program gave me the masculine foundation I needed to become a leader in my career and relationships. The brotherhood aspect is invaluable.",
       rating: 5,
       transformation: "Promoted to team lead, found confidence"
@@ -19,6 +27,7 @@ const Testimonials = () => {
     {
       name: "James Williams",
       age: "35, Father of 2",
+      image: jamesImg,
       content: "As a father, I needed to become the man my family could look up to. The 5 pillars approach helped me get in the best shape of my life while building wealth for my children's future.",
       rating: 5,
       transformation: "Lost 40lbs, doubled income"
@@ -26,6 +35,7 @@ const Testimonials = () => {
     {
       name: "Alex Thompson",
       age: "25, Recent Graduate",
+      image: alexImg,
       content: "Society told me everything I believed about masculinity was wrong. This community helped me understand how to be a strong, purposeful man in today's world without apologizing for it.",
       rating: 5,
       transformation: "Found purpose and direction"
@@ -33,6 +43,7 @@ const Testimonials = () => {
     {
       name: "Robert Garcia",
       age: "41, Business Owner",
+      image: robertImg,
       content: "I thought it was too late to change my life. The practical strategies for passive income and mindset work proved me wrong. I'm now financially free and mentally stronger than ever.",
       rating: 5,
       transformation: "Achieved financial freedom"
@@ -40,6 +51,7 @@ const Testimonials = () => {
     {
       name: "Michael Johnson",
       age: "29, Sales Manager",
+      image: michaelImg,
       content: "The spiritual and mindset components were game-changers. I learned to channel my masculine energy productively and build authentic wealth. Best investment I've ever made.",
       rating: 5,
       transformation: "Tripled sales performance"
@@ -64,6 +76,19 @@ const Testimonials = () => {
               key={index}
               className="bg-card p-6 rounded-xl shadow-card border border-primary/10 hover:border-primary/20 transition-smooth"
             >
+              {/* Profile Photo */}
+              <div className="flex items-center gap-4 mb-4">
+                <img 
+                  src={testimonial.image} 
+                  alt={`${testimonial.name} - ${testimonial.age}`}
+                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/20"
+                />
+                <div>
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">{testimonial.age}</p>
+                </div>
+              </div>
+
               {/* Stars */}
               <div className="flex mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -77,16 +102,10 @@ const Testimonials = () => {
               </p>
 
               {/* Transformation Highlight */}
-              <div className="bg-primary/10 p-3 rounded-lg mb-4">
+              <div className="bg-primary/10 p-3 rounded-lg">
                 <p className="text-primary font-semibold text-sm">
                   🎯 {testimonial.transformation}
                 </p>
-              </div>
-
-              {/* Author */}
-              <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.age}</p>
               </div>
             </div>
           ))}

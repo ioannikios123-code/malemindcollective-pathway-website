@@ -1,10 +1,11 @@
 import { Star } from "lucide-react";
-import marcusImg from "@/assets/testimonials/marcus-rodriguez.jpg";
-import davidImg from "@/assets/testimonials/david-chen.jpg";
-import jamesImg from "@/assets/testimonials/james-williams.jpg";
-import alexImg from "@/assets/testimonials/alex-thompson.jpg";
-import robertImg from "@/assets/testimonials/robert-garcia.jpg";
-import michaelImg from "@/assets/testimonials/michael-johnson.jpg";
+
+const marcusImg = "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=200";
+const davidImg = "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=200";
+const jamesImg = "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=200";
+const alexImg = "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=200";
+const robertImg = "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=200";
+const michaelImg = "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&w=200";
 
 const Testimonials = () => {
   const testimonials = [

@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, BookOpen, Video, Users, DollarSign, Zap } from "lucide-react";
-import coachingImg from "@/assets/services/coaching.jpg";
-import coursesImg from "@/assets/services/digital-courses.jpg";
-import masterclassImg from "@/assets/services/masterclasses.jpg";
-import groupImg from "@/assets/services/group-programs.jpg";
-import wealthImg from "@/assets/services/wealth-building.jpg";
-import transformationImg from "@/assets/services/transformation.jpg";
+
+const coachingImg = "https://images.pexels.com/photos/7176319/pexels-photo-7176319.jpeg?auto=compress&cs=tinysrgb&w=800";
+const coursesImg = "https://images.pexels.com/photos/5905857/pexels-photo-5905857.jpeg?auto=compress&cs=tinysrgb&w=800";
+const masterclassImg = "https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=800";
+const groupImg = "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800";
+const wealthImg = "https://images.pexels.com/photos/6120214/pexels-photo-6120214.jpeg?auto=compress&cs=tinysrgb&w=800";
+const transformationImg = "https://images.pexels.com/photos/4162488/pexels-photo-4162488.jpeg?auto=compress&cs=tinysrgb&w=800";
 
 const Services = () => {
   const services = [

@@ -14,7 +14,167 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      courses: {
+        Row: {
+          created_at: string
+          description: string
+          duration: string | null
+          features: string[] | null
+          id: string
+          image_url: string | null
+          is_active: boolean | null
+          level: string | null
+          long_description: string | null
+          price: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description: string
+          duration?: string | null
+          features?: string[] | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          level?: string | null
+          long_description?: string | null
+          price: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          duration?: string | null
+          features?: string[] | null
+          id?: string
+          image_url?: string | null
+          is_active?: boolean | null
+          level?: string | null
+          long_description?: string | null
+          price?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      intake_forms: {
+        Row: {
+          additional_info: string | null
+          challenges: string | null
+          current_situation: string | null
+          email: string
+          form_type: string
+          full_name: string
+          goals: string | null
+          id: string
+          investment_ready: boolean | null
+          phone: string | null
+          preferred_program: string | null
+          submitted_at: string
+          user_id: string
+        }
+        Insert: {
+          additional_info?: string | null
+          challenges?: string | null
+          current_situation?: string | null
+          email: string
+          form_type: string
+          full_name: string
+          goals?: string | null
+          id?: string
+          investment_ready?: boolean | null
+          phone?: string | null
+          preferred_program?: string | null
+          submitted_at?: string
+          user_id: string
+        }
+        Update: {
+          additional_info?: string | null
+          challenges?: string | null
+          current_situation?: string | null
+          email?: string
+          form_type?: string
+          full_name?: string
+          goals?: string | null
+          id?: string
+          investment_ready?: boolean | null
+          phone?: string | null
+          preferred_program?: string | null
+          submitted_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string
+          full_name: string
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          full_name: string
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          full_name?: string
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      purchases: {
+        Row: {
+          amount: number
+          course_id: string
+          id: string
+          purchased_at: string
+          status: string
+          stripe_payment_id: string | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          course_id: string
+          id?: string
+          purchased_at?: string
+          status?: string
+          stripe_payment_id?: string | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          course_id?: string
+          id?: string
+          purchased_at?: string
+          status?: string
+          stripe_payment_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchases_course_id_fkey"
+            columns: ["course_id"]
+            isOneToOne: false
+            referencedRelation: "courses"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

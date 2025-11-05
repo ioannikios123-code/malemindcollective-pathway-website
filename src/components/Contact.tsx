@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Mail, Instagram, Youtube, Twitter, Calendar } from "lucide-react";
+import { Newsletter } from "./Newsletter";
 
 const Contact = () => {
   const socialLinks = [
@@ -138,22 +139,7 @@ const Contact = () => {
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-primary/10 rounded-lg border border-primary/20">
-              <h4 className="font-semibold mb-2 text-primary">Join Our Newsletter</h4>
-              <p className="text-muted-foreground text-sm mb-4">
-                Get weekly insights, exclusive content, and early access to new programs.
-              </p>
-              <div className="flex gap-2">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-2 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                />
-                <Button variant="default">
-                  Subscribe
-                </Button>
-              </div>
-            </div>
+            <Newsletter />
           </div>
         </div>
       </div>

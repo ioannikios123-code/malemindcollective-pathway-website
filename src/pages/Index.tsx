@@ -4,6 +4,8 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Pillars from "@/components/Pillars";
 import Testimonials from "@/components/Testimonials";
+import VideoShowcase from "@/components/VideoShowcase";
+import IntakeForm from "@/components/IntakeForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -19,6 +21,10 @@ const Index = () => {
         <Services />
         <Pillars />
         <Testimonials />
+        <div id="videos">
+          <VideoShowcase />
+        </div>
+        <IntakeForm />
         <Contact />
       </main>
       <Footer />

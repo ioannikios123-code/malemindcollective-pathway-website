@@ -34,13 +34,13 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button variant="hero" size="lg" className="text-lg px-8 py-6" asChild>
-              <a href="#contact" aria-label="Start your transformation journey">
+              <a href="#intake" aria-label="Start your transformation journey">
                 Start Your Transformation
                 <ArrowRight className="ml-2" size={20} />
               </a>
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-6" asChild>
-              <a href="#about" aria-label="Watch free training video">
+              <a href="#videos" aria-label="Watch free training video">
                 <PlayCircle className="mr-2" size={20} />
                 Watch Free Training
               </a>

@@ -43,19 +43,19 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Programs</h4>
             <div className="space-y-2">
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="/coaching" className="block text-muted-foreground hover:text-primary transition-smooth">
                 1-on-1 Coaching
               </a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Digital Courses
               </a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Masterclasses
               </a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="/mastermind" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Group Programs
               </a>
-              <a href="#services" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
                 90-Day Challenge
               </a>
             </div>

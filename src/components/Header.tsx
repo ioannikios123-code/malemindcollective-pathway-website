@@ -6,12 +6,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Pillars", href: "#pillars" },
-    { name: "Reviews", href: "#testimonials" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/#home" },
+    { name: "About", href: "/#about" },
+    { name: "Services", href: "/#services" },
+    { name: "Coaching", href: "/coaching" },
+    { name: "Courses", href: "/courses" },
+    { name: "Mastermind", href: "/mastermind" },
+    { name: "5 Pillars", href: "/#pillars" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
@@ -34,7 +36,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant="hero" size="sm" asChild>
-              <a href="#contact" aria-label="Get started with transformation">
+              <a href="/#intake" aria-label="Get started with transformation">
                 Get Started
               </a>
             </Button>
@@ -64,7 +66,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="hero" size="sm" className="self-start" asChild>
-                <a href="#contact" aria-label="Get started with transformation">
+                <a href="/#intake" aria-label="Get started with transformation">
                   Get Started
                 </a>
               </Button>

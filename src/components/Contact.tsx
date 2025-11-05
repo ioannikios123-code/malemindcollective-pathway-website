@@ -61,7 +61,7 @@ const Contact = () => {
                   responses from our coaching team.
                 </p>
                 <Button variant="premium" className="w-full" asChild>
-                  <a href="mailto:hello@malemindcollective.com">Access Q&A Platform</a>
+                  <a href="mailto:malemindcollective@gmail.com">Access Q&A Platform</a>
                 </Button>
               </CardContent>
             </Card>
@@ -82,7 +82,7 @@ const Contact = () => {
                   path to get there.
                 </p>
                 <Button variant="hero" className="w-full" asChild>
-                  <a href="mailto:hello@malemindcollective.com">Schedule Free Call</a>
+                  <a href="mailto:malemindcollective@gmail.com">Schedule Free Call</a>
                 </Button>
               </CardContent>
             </Card>
@@ -99,10 +99,10 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">
-                  Email: hello@malemindcollective.com
+                  Email: malemindcollective@gmail.com
                 </p>
                 <Button variant="outline" className="w-full" asChild>
-                  <a href="mailto:hello@malemindcollective.com">Send Email</a>
+                  <a href="mailto:malemindcollective@gmail.com">Send Email</a>
                 </Button>
               </CardContent>
             </Card>

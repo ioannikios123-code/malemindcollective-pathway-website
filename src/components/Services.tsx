@@ -106,8 +106,19 @@ const Services = () => {
                   ))}
                 </div>
                 <div className="text-2xl font-bold text-primary mb-4">{service.price}</div>
-                <Button variant="premium" className="w-full" asChild>
-                  <a href="#contact">Learn More</a>
+                <Button 
+                  variant="premium" 
+                  className="w-full" 
+                  asChild
+                >
+                  <a href={
+                    index === 0 ? "/coaching" : 
+                    index === 1 ? "/courses" : 
+                    index === 3 ? "/mastermind" : 
+                    "#intake"
+                  }>
+                    Learn More
+                  </a>
                 </Button>
               </CardContent>
             </Card>

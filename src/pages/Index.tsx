@@ -5,6 +5,7 @@ import Services from "@/components/Services";
 import Pillars from "@/components/Pillars";
 import Testimonials from "@/components/Testimonials";
 import VideoShowcase from "@/components/VideoShowcase";
+import FreeResources from "@/components/FreeResources";
 import IntakeForm from "@/components/IntakeForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ const Index = () => {
         <div id="videos">
           <VideoShowcase />
         </div>
+        <FreeResources />
         <IntakeForm />
         <Contact />
       </main>

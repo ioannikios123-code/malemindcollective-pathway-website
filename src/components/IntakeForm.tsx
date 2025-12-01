@@ -73,11 +73,11 @@ const IntakeForm = () => {
               <ClipboardList className="text-primary" size={32} />
             </div>
             <CardTitle className="text-3xl mb-4">
-              Start Your Transformation Journey
+              Book Your Free Discovery Call
             </CardTitle>
             <CardDescription className="text-lg">
-              Fill out this form so we can understand your goals and create a personalized 
-              transformation plan tailored to your needs.
+              Let's discuss your goals, challenges, and how I can help you achieve the transformation 
+              you're looking for. This is a no-pressure conversation to see if we're a good fit.
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Check, Video, MessageCircle, Calendar, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 
 const CoachingPage = () => {
   const benefits = [
@@ -174,6 +175,7 @@ const CoachingPage = () => {
         </section>
       </main>
       <Footer />
+      <CustomerSupportChat />
     </div>
   );
 };

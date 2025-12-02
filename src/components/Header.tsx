@@ -1,20 +1,42 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
-  const navItems = [
+  // Items that link to sections on the home page
+  const sectionLinks = [
     { name: "Home", href: "/#home" },
     { name: "About", href: "/#about" },
     { name: "Services", href: "/#services" },
-    { name: "Coaching", href: "/coaching" },
-    { name: "Courses", href: "/courses" },
-    { name: "Mastermind", href: "/mastermind" },
     { name: "5 Pillars", href: "/#pillars" },
     { name: "Contact", href: "/#contact" },
   ];
+
+  // Items that link to separate pages
+  const pageLinks = [
+    { name: "Coaching", href: "/coaching" },
+    { name: "Courses", href: "/courses" },
+    { name: "Mastermind", href: "/mastermind" },
+  ];
+
+  const handleSectionClick = (href: string) => {
+    const sectionId = href.replace("/#", "");
+    if (location.pathname === "/") {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      // Navigate to home page first, then scroll
+      window.location.href = href;
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
@@ -25,20 +47,36 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
+          <nav className="hidden md:flex items-center space-x-6">
+            {sectionLinks.slice(0, 3).map((item) => (
+              <button
                 key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-smooth"
+                onClick={() => handleSectionClick(item.href)}
+                className="text-foreground hover:text-primary transition-smooth text-sm"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
-            <Button variant="hero" size="sm" asChild>
-              <a href="/#intake" aria-label="Get started with transformation">
-                Get Started
-              </a>
+            {pageLinks.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className="text-foreground hover:text-primary transition-smooth text-sm"
+              >
+                {item.name}
+              </Link>
+            ))}
+            {sectionLinks.slice(3).map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleSectionClick(item.href)}
+                className="text-foreground hover:text-primary transition-smooth text-sm"
+              >
+                {item.name}
+              </button>
+            ))}
+            <Button variant="hero" size="sm" onClick={() => handleSectionClick("/#intake")}>
+              Get Started
             </Button>
           </nav>
 
@@ -53,22 +91,29 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border">
+          <nav className="md:hidden mt-4 pb-4 border-t border-border bg-background">
             <div className="flex flex-col space-y-4 pt-4">
-              {navItems.map((item) => (
-                <a
+              {sectionLinks.map((item) => (
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => handleSectionClick(item.href)}
+                  className="text-foreground hover:text-primary transition-smooth text-left"
+                >
+                  {item.name}
+                </button>
+              ))}
+              {pageLinks.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
                   className="text-foreground hover:text-primary transition-smooth"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
-              <Button variant="hero" size="sm" className="self-start" asChild>
-                <a href="/#intake" aria-label="Get started with transformation">
-                  Get Started
-                </a>
+              <Button variant="hero" size="sm" className="self-start" onClick={() => handleSectionClick("/#intake")}>
+                Get Started
               </Button>
             </div>
           </nav>

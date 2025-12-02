@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { BookOpen, Clock, Award, Users } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 
 const CoursesPage = () => {
   const courses = [
@@ -205,6 +206,7 @@ const CoursesPage = () => {
         </section>
       </main>
       <Footer />
+      <CustomerSupportChat />
     </div>
   );
 };

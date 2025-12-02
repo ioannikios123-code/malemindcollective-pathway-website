@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Users, Target, TrendingUp, Award, MessageSquare, Calendar } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 
 const MastermindPage = () => {
   const benefits = [
@@ -265,6 +266,7 @@ const MastermindPage = () => {
         </section>
       </main>
       <Footer />
+      <CustomerSupportChat />
     </div>
   );
 };

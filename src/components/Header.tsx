@@ -1,11 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Menu, X, User } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
+import { User as SupabaseUser } from "@supabase/supabase-js";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState<SupabaseUser | null>(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
 
   // Items that link to sections on the home page
   const sectionLinks = [
@@ -42,9 +58,9 @@ const Header = () => {
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <Link to="/" className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             MaleMindCollective
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
@@ -75,9 +91,22 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
-            <Button variant="hero" size="sm" onClick={() => handleSectionClick("/#intake")}>
-              Get Started
-            </Button>
+            
+            {user ? (
+              <Button variant="hero" size="sm" onClick={() => navigate("/dashboard")} className="gap-2">
+                <User size={16} />
+                Dashboard
+              </Button>
+            ) : (
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" onClick={() => navigate("/auth")}>
+                  Login
+                </Button>
+                <Button variant="hero" size="sm" onClick={() => handleSectionClick("/#intake")}>
+                  Get Started
+                </Button>
+              </div>
+            )}
           </nav>
 
           {/* Mobile Menu Button */}
@@ -112,9 +141,22 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="hero" size="sm" className="self-start" onClick={() => handleSectionClick("/#intake")}>
-                Get Started
-              </Button>
+              
+              {user ? (
+                <Button variant="hero" size="sm" className="self-start gap-2" onClick={() => { navigate("/dashboard"); setIsMenuOpen(false); }}>
+                  <User size={16} />
+                  Dashboard
+                </Button>
+              ) : (
+                <div className="flex flex-col gap-2">
+                  <Button variant="outline" size="sm" className="self-start" onClick={() => { navigate("/auth"); setIsMenuOpen(false); }}>
+                    Login
+                  </Button>
+                  <Button variant="hero" size="sm" className="self-start" onClick={() => handleSectionClick("/#intake")}>
+                    Get Started
+                  </Button>
+                </div>
+              )}
             </div>
           </nav>
         )}

@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import CoachingPage from "./pages/CoachingPage";
 import CoursesPage from "./pages/CoursesPage";
 import MastermindPage from "./pages/MastermindPage";
+import AuthPage from "./pages/AuthPage";
+import DashboardPage from "./pages/DashboardPage";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./components/ErrorBoundary";
 
@@ -24,6 +26,8 @@ const App = () => (
             <Route path="/coaching" element={<CoachingPage />} />
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/mastermind" element={<MastermindPage />} />
+            <Route path="/auth" element={<AuthPage />} />
+            <Route path="/dashboard" element={<DashboardPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

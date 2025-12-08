@@ -1,21 +1,44 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { BookOpen, Clock, Award, Users } from "lucide-react";
+import { BookOpen, Clock, Award, Users, Loader2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CustomerSupportChat } from "@/components/CustomerSupportChat";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
+interface Course {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  duration: string | null;
+  level: string | null;
+  features: string[] | null;
+  image_url: string | null;
+}
 
 const CoursesPage = () => {
-  const courses = [
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [checkoutLoading, setCheckoutLoading] = useState<string | null>(null);
+  const [user, setUser] = useState<any>(null);
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  // Fallback courses if database is empty
+  const fallbackCourses = [
     {
+      id: "mindset-mastery",
       title: "Mindset Mastery",
-      price: "$197",
+      price: 197,
       duration: "6 weeks",
-      students: "2,400+",
       level: "Beginner to Advanced",
-      image: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Transform your thinking patterns and develop an unstoppable mindset",
-      modules: [
+      features: [
         "Mental programming and belief systems",
         "Overcoming limiting beliefs",
         "Building unshakeable confidence",
@@ -24,14 +47,14 @@ const CoursesPage = () => {
       ]
     },
     {
+      id: "physical-dominance",
       title: "Physical Dominance",
-      price: "$197",
+      price: 197,
       duration: "8 weeks",
-      students: "1,800+",
       level: "All Levels",
-      image: "https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Complete training system for building a strong, aesthetic, powerful physique",
-      modules: [
+      features: [
         "Science-based training programs",
         "Nutrition and meal planning",
         "Supplement protocols",
@@ -40,14 +63,14 @@ const CoursesPage = () => {
       ]
     },
     {
+      id: "wealth-builder",
       title: "Wealth Builder Blueprint",
-      price: "$297",
+      price: 297,
       duration: "10 weeks",
-      students: "3,200+",
       level: "Beginner to Intermediate",
-      image: "https://images.pexels.com/photos/6120214/pexels-photo-6120214.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/6120214/pexels-photo-6120214.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Create multiple income streams and build lasting financial freedom",
-      modules: [
+      features: [
         "Income generation strategies",
         "Investment fundamentals",
         "Passive income systems",
@@ -56,14 +79,14 @@ const CoursesPage = () => {
       ]
     },
     {
+      id: "spiritual-awakening",
       title: "Spiritual Awakening",
-      price: "$197",
+      price: 197,
       duration: "6 weeks",
-      students: "1,500+",
       level: "All Levels",
-      image: "https://images.pexels.com/photos/3772612/pexels-photo-3772612.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/3772612/pexels-photo-3772612.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Connect with your purpose and unlock your inner power",
-      modules: [
+      features: [
         "Purpose discovery frameworks",
         "Meditation and mindfulness practices",
         "Energy management techniques",
@@ -72,14 +95,14 @@ const CoursesPage = () => {
       ]
     },
     {
+      id: "masculine-leadership",
       title: "Masculine Leadership",
-      price: "$247",
+      price: 247,
       duration: "8 weeks",
-      students: "2,100+",
       level: "Intermediate to Advanced",
-      image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "Develop the leadership skills to excel in all areas of life",
-      modules: [
+      features: [
         "Leadership principles and frameworks",
         "Communication mastery",
         "Influence and persuasion",
@@ -88,14 +111,14 @@ const CoursesPage = () => {
       ]
     },
     {
+      id: "complete-transformation",
       title: "Complete Transformation",
-      price: "$497",
+      price: 497,
       duration: "12 weeks",
-      students: "5,600+",
       level: "All Levels",
-      image: "https://images.pexels.com/photos/4162488/pexels-photo-4162488.jpeg?auto=compress&cs=tinysrgb&w=800",
+      image_url: "https://images.pexels.com/photos/4162488/pexels-photo-4162488.jpeg?auto=compress&cs=tinysrgb&w=800",
       description: "All-in-one course covering all 5 pillars of masculine development",
-      modules: [
+      features: [
         "All content from individual courses",
         "Bonus masterclasses",
         "Private community access",
@@ -104,6 +127,82 @@ const CoursesPage = () => {
       ]
     }
   ];
+
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      setUser(session?.user ?? null);
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setUser(session?.user ?? null);
+    });
+
+    fetchCourses();
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const fetchCourses = async () => {
+    const { data, error } = await supabase
+      .from("courses")
+      .select("*")
+      .eq("is_active", true);
+
+    if (data && data.length > 0) {
+      setCourses(data);
+    } else {
+      setCourses(fallbackCourses);
+    }
+    setIsLoading(false);
+  };
+
+  const handleEnroll = async (course: Course) => {
+    if (!user) {
+      toast({
+        title: "Login Required",
+        description: "Please login or create an account to purchase courses.",
+      });
+      navigate("/auth");
+      return;
+    }
+
+    setCheckoutLoading(course.id);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        body: {
+          courseId: course.id,
+          courseTitle: course.title,
+          price: course.price,
+          successUrl: `${window.location.origin}/dashboard?success=true`,
+          cancelUrl: `${window.location.origin}/courses?canceled=true`,
+        },
+      });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        window.location.href = data.url;
+      }
+    } catch (error: any) {
+      console.error("Checkout error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setCheckoutLoading(null);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-12 w-12 animate-spin text-primary" />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -127,11 +226,11 @@ const CoursesPage = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {courses.map((course, index) => (
-                <Card key={index} className="bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth overflow-hidden group">
+              {courses.map((course) => (
+                <Card key={course.id} className="bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth overflow-hidden group">
                   <div className="h-48 overflow-hidden">
                     <img 
-                      src={course.image}
+                      src={course.image_url || "https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=800"}
                       alt={course.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -139,46 +238,64 @@ const CoursesPage = () => {
                   <CardHeader>
                     <div className="flex justify-between items-start mb-2">
                       <CardTitle className="text-xl">{course.title}</CardTitle>
-                      <div className="text-2xl font-bold text-primary">{course.price}</div>
+                      <div className="text-2xl font-bold text-primary">${course.price}</div>
                     </div>
                     <CardDescription>{course.description}</CardDescription>
                     
                     <div className="flex flex-wrap gap-4 mt-4 text-sm">
-                      <div className="flex items-center text-muted-foreground">
-                        <Clock size={16} className="mr-1" />
-                        {course.duration}
-                      </div>
+                      {course.duration && (
+                        <div className="flex items-center text-muted-foreground">
+                          <Clock size={16} className="mr-1" />
+                          {course.duration}
+                        </div>
+                      )}
                       <div className="flex items-center text-muted-foreground">
                         <Users size={16} className="mr-1" />
-                        {course.students}
+                        2,000+
                       </div>
-                      <div className="flex items-center text-muted-foreground">
-                        <Award size={16} className="mr-1" />
-                        {course.level}
-                      </div>
+                      {course.level && (
+                        <div className="flex items-center text-muted-foreground">
+                          <Award size={16} className="mr-1" />
+                          {course.level}
+                        </div>
+                      )}
                     </div>
                   </CardHeader>
                   
                   <CardContent>
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3">What You'll Learn:</h4>
-                      <ul className="space-y-2">
-                        {course.modules.slice(0, 3).map((module, idx) => (
-                          <li key={idx} className="flex items-start text-sm">
-                            <BookOpen size={14} className="text-primary mr-2 mt-1 flex-shrink-0" />
-                            <span className="text-muted-foreground">{module}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      {course.modules.length > 3 && (
-                        <p className="text-sm text-muted-foreground mt-2">
-                          +{course.modules.length - 3} more modules
-                        </p>
-                      )}
-                    </div>
+                    {course.features && course.features.length > 0 && (
+                      <div className="mb-6">
+                        <h4 className="font-semibold mb-3">What You'll Learn:</h4>
+                        <ul className="space-y-2">
+                          {course.features.slice(0, 3).map((feature, idx) => (
+                            <li key={idx} className="flex items-start text-sm">
+                              <BookOpen size={14} className="text-primary mr-2 mt-1 flex-shrink-0" />
+                              <span className="text-muted-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        {course.features.length > 3 && (
+                          <p className="text-sm text-muted-foreground mt-2">
+                            +{course.features.length - 3} more modules
+                          </p>
+                        )}
+                      </div>
+                    )}
                     
-                    <Button variant="premium" className="w-full" asChild>
-                      <a href="/#intake">Enroll Now</a>
+                    <Button 
+                      variant="premium" 
+                      className="w-full" 
+                      onClick={() => handleEnroll(course)}
+                      disabled={checkoutLoading === course.id}
+                    >
+                      {checkoutLoading === course.id ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        "Enroll Now"
+                      )}
                     </Button>
                   </CardContent>
                 </Card>

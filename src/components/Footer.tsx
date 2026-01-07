@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className="bg-secondary/40 border-t border-border py-12">
@@ -31,8 +33,11 @@ const Footer = () => {
               <a href="#pillars" className="block text-muted-foreground hover:text-primary transition-smooth">
                 5 Pillars
               </a>
-              <a href="#testimonials" className="block text-muted-foreground hover:text-primary transition-smooth">
-                Reviews
+              <Link to="/blog" className="block text-muted-foreground hover:text-primary transition-smooth">
+                Blog
+              </Link>
+              <a href="#faq" className="block text-muted-foreground hover:text-primary transition-smooth">
+                FAQ
               </a>
               <a href="#contact" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Contact
@@ -43,21 +48,18 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Programs</h4>
             <div className="space-y-2">
-              <a href="/coaching" className="block text-muted-foreground hover:text-primary transition-smooth">
+              <Link to="/coaching" className="block text-muted-foreground hover:text-primary transition-smooth">
                 1-on-1 Coaching
-              </a>
-              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
+              </Link>
+              <Link to="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Digital Courses
-              </a>
-              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
-                Masterclasses
-              </a>
-              <a href="/mastermind" className="block text-muted-foreground hover:text-primary transition-smooth">
-                Group Programs
-              </a>
-              <a href="/courses" className="block text-muted-foreground hover:text-primary transition-smooth">
-                90-Day Challenge
-              </a>
+              </Link>
+              <Link to="/mastermind" className="block text-muted-foreground hover:text-primary transition-smooth">
+                Mastermind
+              </Link>
+              <Link to="/apply" className="block text-muted-foreground hover:text-primary transition-smooth">
+                Apply Now
+              </Link>
             </div>
           </div>
         </div>

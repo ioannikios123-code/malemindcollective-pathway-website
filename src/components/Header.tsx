@@ -37,6 +37,7 @@ const Header = () => {
     { name: "Coaching", href: "/coaching" },
     { name: "Courses", href: "/courses" },
     { name: "Mastermind", href: "/mastermind" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const handleSectionClick = (href: string) => {

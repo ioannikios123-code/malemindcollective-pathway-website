@@ -14,6 +14,51 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author_name: string
+          category: string
+          content: string
+          created_at: string
+          excerpt: string
+          featured_image: string | null
+          id: string
+          is_published: boolean | null
+          published_at: string | null
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author_name?: string
+          category?: string
+          content: string
+          created_at?: string
+          excerpt: string
+          featured_image?: string | null
+          id?: string
+          is_published?: boolean | null
+          published_at?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author_name?: string
+          category?: string
+          content?: string
+          created_at?: string
+          excerpt?: string
+          featured_image?: string | null
+          id?: string
+          is_published?: boolean | null
+          published_at?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       courses: {
         Row: {
           created_at: string
@@ -55,6 +100,39 @@ export type Database = {
           long_description?: string | null
           price?: number
           title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      faqs: {
+        Row: {
+          answer: string
+          category: string
+          created_at: string
+          display_order: number | null
+          id: string
+          is_active: boolean | null
+          question: string
+          updated_at: string
+        }
+        Insert: {
+          answer: string
+          category?: string
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          question: string
+          updated_at?: string
+        }
+        Update: {
+          answer?: string
+          category?: string
+          created_at?: string
+          display_order?: number | null
+          id?: string
+          is_active?: boolean | null
+          question?: string
           updated_at?: string
         }
         Relationships: []
@@ -104,6 +182,75 @@ export type Database = {
           preferred_program?: string | null
           submitted_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      lead_surveys: {
+        Row: {
+          age_range: string | null
+          biggest_goals: string
+          biggest_struggles: string
+          commitment_level: string | null
+          current_income: string | null
+          email: string
+          full_name: string
+          health_fitness_level: string | null
+          how_heard_about_us: string | null
+          id: string
+          investment_ready: string | null
+          phone: string | null
+          relationship_status: string | null
+          submitted_at: string
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          what_tried_before: string | null
+          why_interested: string
+        }
+        Insert: {
+          age_range?: string | null
+          biggest_goals: string
+          biggest_struggles: string
+          commitment_level?: string | null
+          current_income?: string | null
+          email: string
+          full_name: string
+          health_fitness_level?: string | null
+          how_heard_about_us?: string | null
+          id?: string
+          investment_ready?: string | null
+          phone?: string | null
+          relationship_status?: string | null
+          submitted_at?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          what_tried_before?: string | null
+          why_interested: string
+        }
+        Update: {
+          age_range?: string | null
+          biggest_goals?: string
+          biggest_struggles?: string
+          commitment_level?: string | null
+          current_income?: string | null
+          email?: string
+          full_name?: string
+          health_fitness_level?: string | null
+          how_heard_about_us?: string | null
+          id?: string
+          investment_ready?: string | null
+          phone?: string | null
+          relationship_status?: string | null
+          submitted_at?: string
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          what_tried_before?: string | null
+          why_interested?: string
         }
         Relationships: []
       }

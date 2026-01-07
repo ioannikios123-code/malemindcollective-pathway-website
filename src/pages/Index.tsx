@@ -6,6 +6,7 @@ import Pillars from "@/components/Pillars";
 import Testimonials from "@/components/Testimonials";
 import VideoShowcase from "@/components/VideoShowcase";
 import FreeResources from "@/components/FreeResources";
+import FAQ from "@/components/FAQ";
 import IntakeForm from "@/components/IntakeForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ const Index = () => {
           <VideoShowcase />
         </div>
         <FreeResources />
+        <FAQ />
         <IntakeForm />
         <Contact />
       </main>

@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Session } from "@supabase/supabase-js";
-import { Play, BookOpen, Users, LogOut, Crown, Video } from "lucide-react";
+import { Play, BookOpen, Users, LogOut, Crown, Video, FileText, Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -31,11 +31,21 @@ interface VideoItem {
   is_free: boolean;
 }
 
+interface CourseMaterial {
+  id: string;
+  course_id: string | null;
+  title: string;
+  description: string | null;
+  file_url: string;
+  file_type: string;
+}
+
 const DashboardPage = () => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [purchases, setPurchases] = useState<Purchase[]>([]);
   const [freeVideos, setFreeVideos] = useState<VideoItem[]>([]);
+  const [courseMaterials, setCourseMaterials] = useState<CourseMaterial[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -95,6 +105,16 @@ const DashboardPage = () => {
 
     if (videoData) {
       setFreeVideos(videoData as VideoItem[]);
+    }
+
+    // Fetch course materials (RLS ensures only purchased course materials are returned)
+    const { data: materialsData } = await supabase
+      .from("course_materials")
+      .select("*")
+      .order("display_order");
+
+    if (materialsData) {
+      setCourseMaterials(materialsData as CourseMaterial[]);
     }
 
     setIsLoading(false);
@@ -201,6 +221,41 @@ const DashboardPage = () => {
               </Card>
             )}
           </section>
+
+          {/* Course Materials */}
+          {courseMaterials.length > 0 && (
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold mb-6">Course Materials & Downloads</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {courseMaterials.map((material) => (
+                  <Card key={material.id} className="bg-gradient-card border-border">
+                    <CardContent className="p-6 flex items-start gap-4">
+                      <div className="bg-primary/10 p-4 rounded-lg shrink-0">
+                        <FileText className="h-8 w-8 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-semibold text-lg mb-1">{material.title}</h3>
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                          {material.description}
+                        </p>
+                        <a 
+                          href={material.file_url} 
+                          download 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant="outline" size="sm" className="gap-2">
+                            <Download className="h-4 w-4" />
+                            Download PDF
+                          </Button>
+                        </a>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Free Content */}
           <section className="mb-12">

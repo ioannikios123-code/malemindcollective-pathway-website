@@ -114,7 +114,10 @@ const Services = () => {
                   <a href={
                     index === 0 ? "/coaching" : 
                     index === 1 ? "/courses" : 
+                    index === 2 ? "/masterclasses" : 
                     index === 3 ? "/mastermind" : 
+                    index === 4 ? "/wealth-building" : 
+                    index === 5 ? "/transformation" : 
                     "#intake"
                   }>
                     Learn More

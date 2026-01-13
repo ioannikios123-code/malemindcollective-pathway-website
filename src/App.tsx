@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import CoachingPage from "./pages/CoachingPage";
 import CoursesPage from "./pages/CoursesPage";
 import MastermindPage from "./pages/MastermindPage";
+import MasterclassesPage from "./pages/MasterclassesPage";
+import WealthBuildingPage from "./pages/WealthBuildingPage";
+import TransformationPage from "./pages/TransformationPage";
 import AuthPage from "./pages/AuthPage";
 import DashboardPage from "./pages/DashboardPage";
 import ApplyPage from "./pages/ApplyPage";
@@ -29,6 +32,9 @@ const App = () => (
             <Route path="/coaching" element={<CoachingPage />} />
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/mastermind" element={<MastermindPage />} />
+            <Route path="/masterclasses" element={<MasterclassesPage />} />
+            <Route path="/wealth-building" element={<WealthBuildingPage />} />
+            <Route path="/transformation" element={<TransformationPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/apply" element={<ApplyPage />} />

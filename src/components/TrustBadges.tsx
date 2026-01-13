@@ -107,22 +107,23 @@ const TrustBadges = () => {
           ))}
         </div>
 
-        {/* Featured In Section */}
+        {/* Credibility Section */}
         <div className="mt-12 text-center">
           <p className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">
-            As Featured In
+            Trusted by Men Worldwide
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {["Forbes", "Entrepreneur", "Inc.", "Men's Health", "GQ"].map(
-              (brand) => (
-                <span
-                  key={brand}
-                  className="text-xl md:text-2xl font-bold text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {brand}
-                </span>
-              )
-            )}
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {[
+              { label: "Money-Back Guarantee", desc: "30-Day" },
+              { label: "Active Community", desc: "2,500+" },
+              { label: "Success Rate", desc: "95%" },
+              { label: "Countries", desc: "35+" }
+            ].map((item) => (
+              <div key={item.label} className="text-center px-4">
+                <div className="text-lg font-bold text-primary">{item.desc}</div>
+                <div className="text-sm text-muted-foreground">{item.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

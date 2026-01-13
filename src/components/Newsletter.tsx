@@ -27,6 +27,19 @@ export const Newsletter = () => {
 
       if (error) throw error;
 
+      // Send email notification
+      try {
+        await supabase.functions.invoke("send-form-notification", {
+          body: {
+            formType: "newsletter",
+            name: "Newsletter Subscriber",
+            email: email,
+          },
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+      }
+
       toast({
         title: "Success! 🎉",
         description: "You're now subscribed to our newsletter. Check your inbox for exclusive content!",

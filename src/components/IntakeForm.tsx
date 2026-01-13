@@ -40,6 +40,24 @@ const IntakeForm = () => {
 
       if (error) throw error;
 
+      // Send email notification
+      try {
+        await supabase.functions.invoke("send-form-notification", {
+          body: {
+            formType: "consultation",
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            goals: formData.goals,
+            challenges: formData.challenges,
+            additionalInfo: formData.experience,
+          },
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+        // Don't fail the form submission if email fails
+      }
+
       toast({
         title: "Form Submitted! 🎉",
         description: "We'll review your information and get back to you within 24 hours.",

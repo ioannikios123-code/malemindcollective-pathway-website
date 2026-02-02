@@ -36,6 +36,9 @@ const Footer = () => {
               <Link to="/blog" className="block text-muted-foreground hover:text-primary transition-smooth">
                 Blog
               </Link>
+              <a href="#newsletter" className="block text-muted-foreground hover:text-primary transition-smooth">
+                Newsletter
+              </a>
               <a href="#faq" className="block text-muted-foreground hover:text-primary transition-smooth">
                 FAQ
               </a>

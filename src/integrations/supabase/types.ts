@@ -195,7 +195,7 @@ export type Database = {
           phone: string | null
           preferred_program: string | null
           submitted_at: string
-          user_id: string
+          user_id: string | null
         }
         Insert: {
           additional_info?: string | null
@@ -210,7 +210,7 @@ export type Database = {
           phone?: string | null
           preferred_program?: string | null
           submitted_at?: string
-          user_id: string
+          user_id?: string | null
         }
         Update: {
           additional_info?: string | null
@@ -225,7 +225,7 @@ export type Database = {
           phone?: string | null
           preferred_program?: string | null
           submitted_at?: string
-          user_id?: string
+          user_id?: string | null
         }
         Relationships: []
       }

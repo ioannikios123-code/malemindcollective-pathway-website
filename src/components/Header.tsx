@@ -38,6 +38,7 @@ const Header = () => {
     { name: "Coaching", href: "/coaching" },
     { name: "Courses", href: "/courses" },
     { name: "Mastermind", href: "/mastermind" },
+    { name: "Founder", href: "/founder" },
     { name: "Success Stories", href: "/success-stories" },
     { name: "Blog", href: "/blog" },
   ];

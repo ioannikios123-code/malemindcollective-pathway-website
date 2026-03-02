@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import MediaMentions from "@/components/MediaMentions";
 import TrustBadges from "@/components/TrustBadges";
 import Stats from "@/components/Stats";
 import About from "@/components/About";
@@ -24,6 +25,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <MediaMentions />
         <TrustBadges />
         <Stats />
         <About />

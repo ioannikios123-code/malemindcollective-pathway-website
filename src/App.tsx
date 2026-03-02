@@ -16,6 +16,7 @@ import ApplyPage from "./pages/ApplyPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
 import SuccessStoriesPage from "./pages/SuccessStoriesPage";
+import FounderPage from "./pages/FounderPage";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./components/ErrorBoundary";
 
@@ -42,6 +43,7 @@ const App = () => (
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/success-stories" element={<SuccessStoriesPage />} />
+            <Route path="/founder" element={<FounderPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

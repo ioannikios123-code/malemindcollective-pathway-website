@@ -67,7 +67,34 @@ const Testimonials = () => {
       rating: 5,
       transformation: "Tripled sales performance",
       metric: "3x sales growth",
-    }
+    },
+    {
+      name: "Chris Martinez",
+      age: "27, Gym Owner",
+      image: chrisImg,
+      content: "I had the body but not the mind or the money. This program gave me the complete picture. I now own my own gym and lead with purpose.",
+      rating: 5,
+      transformation: "Opened his own gym, 200+ members",
+      metric: "5x revenue growth",
+    },
+    {
+      name: "Kevin Brooks",
+      age: "38, VP of Operations",
+      image: kevinImg,
+      content: "The mastermind group held me accountable like nothing else. I went from middle management to VP in under a year.",
+      rating: 5,
+      transformation: "Promoted to VP in 11 months",
+      metric: "$80K salary increase",
+    },
+    {
+      name: "Brandon Torres",
+      age: "44, Divorced Father",
+      image: brandonImg,
+      content: "After my divorce, I was lost. This program rebuilt me from the inside out. Best shape of my life, better relationship with my kids than ever.",
+      rating: 5,
+      transformation: "Complete life rebuild post-divorce",
+      metric: "Total transformation",
+    },
   ];
 
   return (

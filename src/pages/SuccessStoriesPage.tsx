@@ -15,6 +15,9 @@ const michaelImg = "https://images.pexels.com/photos/1024311/pexels-photo-102431
 const danielImg = "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400";
 const chrisImg = "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400";
 const kevinImg = "https://images.pexels.com/photos/936119/pexels-photo-936119.jpeg?auto=compress&cs=tinysrgb&w=400";
+const anthonyImg = "https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg?auto=compress&cs=tinysrgb&w=400";
+const brandonImg = "https://images.pexels.com/photos/2380795/pexels-photo-2380795.jpeg?auto=compress&cs=tinysrgb&w=400";
+const tylerImg = "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=400";
 
 const featuredStories = [
   {
@@ -67,6 +70,40 @@ const featuredStories = [
     ],
     quote: "My kids now look at me the way I always wanted them to — with pride. That alone was worth everything.",
     program: "Physical Excellence + Wealth Building",
+  },
+  {
+    name: "Robert Garcia",
+    age: 41,
+    role: "Business Owner",
+    image: robertImg,
+    headline: "From $45K in Debt to Financially Free at 41",
+    before: "Carrying $45K in consumer debt, running a struggling business, and believing it was too late to turn things around at his age.",
+    journey: "Robert joined the Wealth Building program skeptical but desperate. His coach restructured his business model, helped him eliminate debt using the avalanche method, and introduced him to passive income strategies. The mindset work was critical — he had to unlearn decades of scarcity thinking.",
+    after: "Debt-free with $15K/month in passive income, a thriving business, and the time freedom to travel with his family.",
+    metrics: [
+      { label: "Passive Income", value: "$15K/mo" },
+      { label: "Debt Cleared", value: "$45K" },
+      { label: "Net Worth Growth", value: "$200K+" },
+    ],
+    quote: "I thought financial freedom was for younger men. I was wrong. Age is just another excuse we use to stay comfortable.",
+    program: "Wealth Building + 1-on-1 Coaching",
+  },
+  {
+    name: "Chris Martinez",
+    age: 27,
+    role: "Personal Trainer → Gym Owner",
+    image: chrisImg,
+    headline: "From Burnt-Out Trainer to Gym Owner with 200+ Members",
+    before: "Making $35K/year training 8 clients a day at a big-box gym, working 60-hour weeks, and living paycheck to paycheck despite being in great shape.",
+    journey: "Chris had the physical pillar mastered but was broke. The Wealth pillar showed him he was trading time for money with zero leverage. His coach helped him write a business plan, the Mindset work crushed his imposter syndrome, and the Brotherhood connected him with two gym owners who mentored him through every step.",
+    after: "Opened his own gym within 5 months, grew to 200+ members in year one, and now earns 5x his previous income while working fewer hours.",
+    metrics: [
+      { label: "Revenue Growth", value: "5x" },
+      { label: "Gym Members", value: "200+" },
+      { label: "Hours Worked", value: "-40%" },
+    ],
+    quote: "I had the body but not the mind or the money. This program gave me the complete picture. Don't wait until you feel ready — ready is a myth.",
+    program: "Wealth Building + Mastermind",
   },
 ];
 
@@ -123,6 +160,33 @@ const additionalTestimonials = [
     image: kevinImg,
     quote: "The mastermind group held me accountable like nothing else. I went from middle management to VP in under a year. The men in this group elevate you.",
     transformation: "Promoted to VP, salary increased by $80K",
+    rating: 5,
+  },
+  {
+    name: "Anthony Reed",
+    age: 30,
+    role: "Teacher",
+    image: anthonyImg,
+    quote: "Teaching is rewarding but the pay was crushing me. The wealth pillar helped me build a tutoring business on the side. I now earn more from my side business than my day job.",
+    transformation: "Built $8K/mo side income while teaching full-time",
+    rating: 5,
+  },
+  {
+    name: "Brandon Torres",
+    age: 44,
+    role: "Divorced Father",
+    image: brandonImg,
+    quote: "After my divorce, I was lost. This program rebuilt me from the inside out. I'm in the best shape of my life, my relationship with my kids has never been better, and I finally respect the man I see in the mirror.",
+    transformation: "Complete life rebuild — fitness, fatherhood, and self-worth",
+    rating: 5,
+  },
+  {
+    name: "Tyler Washington",
+    age: 23,
+    role: "College Dropout",
+    image: tylerImg,
+    quote: "Everyone told me I ruined my life by dropping out. MaleMindCollective showed me that a degree isn't the only path. I launched a digital marketing agency and hit 6 figures before my friends graduated.",
+    transformation: "Built 6-figure agency without a degree",
     rating: 5,
   },
 ];

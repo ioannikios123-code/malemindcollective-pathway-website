@@ -4,16 +4,18 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Heart, Shield, Lightbulb, Users } from "lucide-react";
+import { ArrowRight, Target, Heart, Shield, Lightbulb, Users, Zap, Clock, MessageCircle } from "lucide-react";
 
 const founderImg = "https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=600";
 
 const milestones = [
-  { year: "The Beginning", text: "Grew up facing adversity, financial hardship, and a lack of strong male role models. These experiences planted the seed for what would become MaleMindCollective." },
-  { year: "The Struggle", text: "Spent years searching for answers — trying programs, reading hundreds of books, and learning through painful trial and error across fitness, finances, relationships, and identity." },
-  { year: "The Breakthrough", text: "Discovered that true masculine transformation requires a holistic approach — not just one area, but all five pillars working together. Built a system that finally delivered lasting change." },
-  { year: "The Mission", text: "Began coaching other men through the same framework. Within months, the results were undeniable — men were building wealth, getting fit, finding purpose, and becoming leaders." },
-  { year: "Today", text: "MaleMindCollective has impacted 500+ men worldwide. What started as a personal journey has become a movement dedicated to helping men reclaim their power and build extraordinary lives." },
+  { year: "The Beginning", text: "Grew up without a father figure, navigating poverty, self-doubt, and a world that offered no roadmap for becoming the man I needed to be. I learned early that no one was coming to save me." },
+  { year: "The Dark Years", text: "Spent my twenties chasing the wrong things — validation, quick money, superficial success. Hit rock bottom financially, emotionally, and spiritually. Lost relationships, lost myself." },
+  { year: "The Awakening", text: "A moment of brutal honesty changed everything. I realized I'd been running from pain instead of building toward purpose. Started devouring books, seeking mentors, and rebuilding from the ground up." },
+  { year: "The System", text: "After years of trial, error, and painful growth, I discovered that real transformation requires five pillars working together — mindset, wealth, fitness, relationships, and spirituality. No shortcuts." },
+  { year: "The First Clients", text: "Started coaching men informally — friends, colleagues, men who saw my transformation and wanted the same. The results were immediate and undeniable. I knew this was my calling." },
+  { year: "MaleMindCollective", text: "Formalized the 5 Pillars system into a full coaching program. What started with 5 men in a group chat has grown into a global movement impacting 500+ lives across 35+ countries." },
+  { year: "Today & Beyond", text: "Every day, I wake up with one mission: to help men stop settling and start building lives they're genuinely proud of. This is just the beginning." },
 ];
 
 const values = [
@@ -103,9 +105,35 @@ const FounderPage = () => {
           </div>
         </section>
 
-        {/* Mission & Values */}
+        {/* What Coaching With Me Looks Like */}
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                What Coaching With Me <span className="text-primary">Looks Like</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                This isn't generic advice. It's a personalized, no-BS partnership designed to get you results.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
+              {[
+                { icon: MessageCircle, title: "Brutally Honest Conversations", desc: "I'll tell you what you need to hear, not what you want to hear. Growth starts with truth." },
+                { icon: Clock, title: "Weekly Accountability", desc: "Every week, we review progress, adjust your plan, and make sure you're executing — not just dreaming." },
+                { icon: Zap, title: "Action-First Approach", desc: "No theory without practice. Every session ends with specific action items you execute immediately." },
+              ].map((item, i) => (
+                <div key={i} className="bg-card p-8 rounded-xl border border-primary/10 hover:border-primary/20 transition-smooth text-center">
+                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+                    <item.icon className="text-primary" size={26} />
+                  </div>
+                  <h3 className="font-bold text-foreground text-lg mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Mission & Values */}
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 The <span className="text-primary">Mission</span>
@@ -135,22 +163,28 @@ const FounderPage = () => {
             <div className="max-w-3xl mx-auto bg-gradient-card p-10 md:p-14 rounded-2xl border border-primary/20 shadow-elegant">
               <div className="flex items-center gap-3 mb-6">
                 <Users className="text-primary" size={24} />
-                <p className="text-primary font-semibold text-sm uppercase tracking-wider">A Message to You</p>
+                <p className="text-primary font-semibold text-sm uppercase tracking-wider">In My Own Words</p>
               </div>
               <p className="text-foreground text-lg leading-relaxed mb-6">
-                "If you're reading this, you already know something needs to change. That feeling in your gut — the one telling you that you're capable of more — that's not anxiety. That's your potential demanding to be unleashed.
+                "I know what it feels like to look in the mirror and not recognize the man staring back. To know you're capable of more but have no idea where to start. To feel like you're failing the people who depend on you.
               </p>
               <p className="text-foreground text-lg leading-relaxed mb-6">
-                I've been exactly where you are. Unsure, unfocused, and underperforming in areas that matter most. But I discovered that with the right system, the right mindset, and the right men around you, transformation isn't just possible — it's inevitable.
+                I've been broke. I've been broken. I've made every mistake in the book — and then some. But I refused to stay there. I clawed my way out of mediocrity one decision at a time, one discipline at a time, one honest conversation at a time.
+              </p>
+              <p className="text-foreground text-lg leading-relaxed mb-6">
+                MaleMindCollective exists because I needed it and it didn't exist. So I built it. Not as a business first — as a lifeline for men like me who are tired of settling.
               </p>
               <p className="text-foreground text-lg leading-relaxed mb-8">
-                MaleMindCollective isn't just a coaching program. It's a commitment to becoming the man you were born to be. And I'm here to walk that path with you."
+                If that's you, I want to hear from you. Not to sell you something — to understand where you are and show you what's possible. Your transformation is closer than you think."
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-4">
                 <Link to="/apply">
                   <Button variant="hero" size="lg" className="gap-2">
                     Begin Your Transformation <ArrowRight size={18} />
                   </Button>
+                </Link>
+                <Link to="/success-stories">
+                  <Button variant="outline" size="lg">See the Results</Button>
                 </Link>
               </div>
             </div>

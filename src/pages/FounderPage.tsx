@@ -4,7 +4,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Heart, Shield, Lightbulb, Users } from "lucide-react";
+import { ArrowRight, Target, Heart, Shield, Lightbulb, Users, Zap, Clock, MessageCircle } from "lucide-react";
 
 const founderImg = "https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=600";
 

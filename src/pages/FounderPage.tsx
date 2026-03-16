@@ -9,11 +9,13 @@ import { ArrowRight, Target, Heart, Shield, Lightbulb, Users } from "lucide-reac
 const founderImg = "https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=600";
 
 const milestones = [
-  { year: "The Beginning", text: "Grew up facing adversity, financial hardship, and a lack of strong male role models. These experiences planted the seed for what would become MaleMindCollective." },
-  { year: "The Struggle", text: "Spent years searching for answers — trying programs, reading hundreds of books, and learning through painful trial and error across fitness, finances, relationships, and identity." },
-  { year: "The Breakthrough", text: "Discovered that true masculine transformation requires a holistic approach — not just one area, but all five pillars working together. Built a system that finally delivered lasting change." },
-  { year: "The Mission", text: "Began coaching other men through the same framework. Within months, the results were undeniable — men were building wealth, getting fit, finding purpose, and becoming leaders." },
-  { year: "Today", text: "MaleMindCollective has impacted 500+ men worldwide. What started as a personal journey has become a movement dedicated to helping men reclaim their power and build extraordinary lives." },
+  { year: "The Beginning", text: "Grew up without a father figure, navigating poverty, self-doubt, and a world that offered no roadmap for becoming the man I needed to be. I learned early that no one was coming to save me." },
+  { year: "The Dark Years", text: "Spent my twenties chasing the wrong things — validation, quick money, superficial success. Hit rock bottom financially, emotionally, and spiritually. Lost relationships, lost myself." },
+  { year: "The Awakening", text: "A moment of brutal honesty changed everything. I realized I'd been running from pain instead of building toward purpose. Started devouring books, seeking mentors, and rebuilding from the ground up." },
+  { year: "The System", text: "After years of trial, error, and painful growth, I discovered that real transformation requires five pillars working together — mindset, wealth, fitness, relationships, and spirituality. No shortcuts." },
+  { year: "The First Clients", text: "Started coaching men informally — friends, colleagues, men who saw my transformation and wanted the same. The results were immediate and undeniable. I knew this was my calling." },
+  { year: "MaleMindCollective", text: "Formalized the 5 Pillars system into a full coaching program. What started with 5 men in a group chat has grown into a global movement impacting 500+ lives across 35+ countries." },
+  { year: "Today & Beyond", text: "Every day, I wake up with one mission: to help men stop settling and start building lives they're genuinely proud of. This is just the beginning." },
 ];
 
 const values = [

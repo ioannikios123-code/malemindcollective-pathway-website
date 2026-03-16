@@ -162,6 +162,33 @@ const additionalTestimonials = [
     transformation: "Promoted to VP, salary increased by $80K",
     rating: 5,
   },
+  {
+    name: "Anthony Reed",
+    age: 30,
+    role: "Teacher",
+    image: anthonyImg,
+    quote: "Teaching is rewarding but the pay was crushing me. The wealth pillar helped me build a tutoring business on the side. I now earn more from my side business than my day job.",
+    transformation: "Built $8K/mo side income while teaching full-time",
+    rating: 5,
+  },
+  {
+    name: "Brandon Torres",
+    age: 44,
+    role: "Divorced Father",
+    image: brandonImg,
+    quote: "After my divorce, I was lost. This program rebuilt me from the inside out. I'm in the best shape of my life, my relationship with my kids has never been better, and I finally respect the man I see in the mirror.",
+    transformation: "Complete life rebuild — fitness, fatherhood, and self-worth",
+    rating: 5,
+  },
+  {
+    name: "Tyler Washington",
+    age: 23,
+    role: "College Dropout",
+    image: tylerImg,
+    quote: "Everyone told me I ruined my life by dropping out. MaleMindCollective showed me that a degree isn't the only path. I launched a digital marketing agency and hit 6 figures before my friends graduated.",
+    transformation: "Built 6-figure agency without a degree",
+    rating: 5,
+  },
 ];
 
 const SuccessStoriesPage = () => {

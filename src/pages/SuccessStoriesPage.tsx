@@ -71,6 +71,40 @@ const featuredStories = [
     quote: "My kids now look at me the way I always wanted them to — with pride. That alone was worth everything.",
     program: "Physical Excellence + Wealth Building",
   },
+  {
+    name: "Robert Garcia",
+    age: 41,
+    role: "Business Owner",
+    image: robertImg,
+    headline: "From $45K in Debt to Financially Free at 41",
+    before: "Carrying $45K in consumer debt, running a struggling business, and believing it was too late to turn things around at his age.",
+    journey: "Robert joined the Wealth Building program skeptical but desperate. His coach restructured his business model, helped him eliminate debt using the avalanche method, and introduced him to passive income strategies. The mindset work was critical — he had to unlearn decades of scarcity thinking.",
+    after: "Debt-free with $15K/month in passive income, a thriving business, and the time freedom to travel with his family.",
+    metrics: [
+      { label: "Passive Income", value: "$15K/mo" },
+      { label: "Debt Cleared", value: "$45K" },
+      { label: "Net Worth Growth", value: "$200K+" },
+    ],
+    quote: "I thought financial freedom was for younger men. I was wrong. Age is just another excuse we use to stay comfortable.",
+    program: "Wealth Building + 1-on-1 Coaching",
+  },
+  {
+    name: "Chris Martinez",
+    age: 27,
+    role: "Personal Trainer → Gym Owner",
+    image: chrisImg,
+    headline: "From Burnt-Out Trainer to Gym Owner with 200+ Members",
+    before: "Making $35K/year training 8 clients a day at a big-box gym, working 60-hour weeks, and living paycheck to paycheck despite being in great shape.",
+    journey: "Chris had the physical pillar mastered but was broke. The Wealth pillar showed him he was trading time for money with zero leverage. His coach helped him write a business plan, the Mindset work crushed his imposter syndrome, and the Brotherhood connected him with two gym owners who mentored him through every step.",
+    after: "Opened his own gym within 5 months, grew to 200+ members in year one, and now earns 5x his previous income while working fewer hours.",
+    metrics: [
+      { label: "Revenue Growth", value: "5x" },
+      { label: "Gym Members", value: "200+" },
+      { label: "Hours Worked", value: "-40%" },
+    ],
+    quote: "I had the body but not the mind or the money. This program gave me the complete picture. Don't wait until you feel ready — ready is a myth.",
+    program: "Wealth Building + Mastermind",
+  },
 ];
 
 const additionalTestimonials = [

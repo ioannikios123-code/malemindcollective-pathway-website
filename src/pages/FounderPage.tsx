@@ -6,8 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Target, Heart, Shield, Lightbulb, Users, Zap, Clock, MessageCircle } from "lucide-react";
 
-const founderImg = "https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=600";
-
 const milestones = [
   { year: "The Beginning", text: "Grew up without a father figure, navigating poverty, self-doubt, and a world that offered no roadmap for becoming the man I needed to be. I learned early that no one was coming to save me." },
   { year: "The Dark Years", text: "Spent my twenties chasing the wrong things — validation, quick money, superficial success. Hit rock bottom financially, emotionally, and spiritually. Lost relationships, lost myself." },
@@ -30,70 +28,69 @@ const FounderPage = () => {
     <div className="min-h-screen bg-background pt-16">
       <Header />
       <main>
-        {/* Hero */}
+        {/* Hero — Text-based, no photo */}
         <section className="py-20 bg-gradient-hero relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(45_100%_70%/0.04),transparent_60%)]" />
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
-              {/* Photo */}
-              <div className="flex-shrink-0">
-                <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-primary rounded-2xl opacity-20 blur-sm" />
-                  <img
-                    src={founderImg}
-                    alt="Founder of MaleMindCollective"
-                    className="relative w-64 h-80 md:w-72 md:h-96 object-cover rounded-2xl shadow-elegant"
-                  />
-                </div>
-              </div>
-
-              {/* Intro */}
-              <div className="text-center md:text-left">
-                <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Meet the Founder</p>
-                <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-                  Building Men Who Build <span className="bg-gradient-primary bg-clip-text text-transparent">Legacies</span>
-                </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6 max-w-lg">
-                  I created MaleMindCollective because I lived the pain of having no roadmap. No mentor. No brotherhood.
-                  I built the program I wish I had — and now it's transforming lives across the globe.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-                  <Link to="/apply">
-                    <Button variant="hero" className="gap-2">
-                      Work With Me <ArrowRight size={16} />
-                    </Button>
-                  </Link>
-                  <Link to="/success-stories">
-                    <Button variant="outline">See the Results</Button>
-                  </Link>
-                </div>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Meet the Founder</p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Building Men Who Build <span className="bg-gradient-primary bg-clip-text text-transparent">Legacies</span>
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-2xl mx-auto">
+                I created MaleMindCollective because I lived the pain of having no roadmap. No mentor. No brotherhood.
+                I built the program I wish I had — and now it's transforming lives across the globe.
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed mb-8 max-w-2xl mx-auto">
+                My mission is simple: to equip men with the tools, mindset, and community they need to stop settling and start building lives they're genuinely proud of.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link to="/apply">
+                  <Button variant="hero" className="gap-2">
+                    Work With Me <ArrowRight size={16} />
+                  </Button>
+                </Link>
+                <Link to="/success-stories">
+                  <Button variant="outline">See the Results</Button>
+                </Link>
               </div>
             </div>
           </div>
         </section>
 
-        {/* My Story Timeline */}
+        {/* Why I Started This */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-                My <span className="text-primary">Journey</span>
+                Why I <span className="text-primary">Started This</span>
               </h2>
-              <p className="text-center text-muted-foreground mb-16 text-lg">
-                From struggle to purpose — this is the path that created MaleMindCollective.
+              <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
+                I didn't come from privilege. I came from pain. And I turned that pain into a system that works.
               </p>
+
+              <div className="bg-card p-8 md:p-10 rounded-2xl border border-primary/10 mb-16">
+                <p className="text-foreground text-lg leading-relaxed mb-4">
+                  Growing up without a father, without mentors, and without resources, I had to figure everything out the hard way. I made every mistake possible — financially, emotionally, spiritually. But through those mistakes, I discovered something powerful:
+                </p>
+                <p className="text-foreground text-lg leading-relaxed font-medium text-primary">
+                  Real transformation isn't about fixing one thing. It's about building five pillars simultaneously — Mindset, Wealth, Fitness, Relationships, and Spirituality.
+                </p>
+              </div>
+
+              <h3 className="text-2xl font-bold text-center mb-12">
+                My <span className="text-primary">Journey</span>
+              </h3>
 
               <div className="space-y-0">
                 {milestones.map((m, i) => (
                   <div key={i} className="flex gap-6">
-                    {/* Timeline line */}
                     <div className="flex flex-col items-center">
                       <div className="w-4 h-4 rounded-full bg-primary border-4 border-background shadow-glow flex-shrink-0" />
                       {i < milestones.length - 1 && (
                         <div className="w-0.5 flex-1 bg-gradient-to-b from-primary/40 to-primary/5" />
                       )}
                     </div>
-                    {/* Content */}
                     <div className="pb-12">
                       <p className="text-primary font-bold text-sm uppercase tracking-wider mb-1">{m.year}</p>
                       <p className="text-muted-foreground leading-relaxed">{m.text}</p>

@@ -1,11 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Heart, Dumbbell, DollarSign, Shield } from "lucide-react";
-
-const mindsetImg = "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=800";
-const spiritualImg = "https://images.pexels.com/photos/1051838/pexels-photo-1051838.jpeg?auto=compress&cs=tinysrgb&w=800";
-const physicalImg = "https://images.pexels.com/photos/416809/pexels-photo-416809.jpeg?auto=compress&cs=tinysrgb&w=800";
-const wealthImg = "https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=800";
-const masculinityImg = "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800";
+import mindsetImg from "@/assets/pillar-mindset.jpg";
+import spiritualImg from "@/assets/pillar-spiritual.jpg";
+import physicalImg from "@/assets/pillar-physical.jpg";
+import wealthImg from "@/assets/pillar-wealth.jpg";
+import masculinityImg from "@/assets/pillar-masculinity.jpg";
 
 const Pillars = () => {
   const pillars = [

@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Target, Users, Trophy } from "lucide-react";
-
-const missionImg = "https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&cs=tinysrgb&w=1200";
+import missionImg from "@/assets/about-mission.jpg";
 
 const About = () => {
   return (

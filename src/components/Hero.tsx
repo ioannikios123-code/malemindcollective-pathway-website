@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, PlayCircle, CheckCircle } from "lucide-react";
-
-const heroImage = "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=1920";
+import heroImage from "@/assets/hero-main.jpg";
 
 const Hero = () => {
   const benefits = [

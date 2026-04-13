@@ -15,7 +15,7 @@ const Services = () => {
       title: "1-on-1 Coaching",
       description: "Personal transformation sessions tailored to your specific needs and goals",
       features: ["Weekly 60-min sessions", "Custom action plans", "24/7 text support", "Goal tracking"],
-      price: "From $297/month",
+      price: "Starting from $297/mo",
       image: coachingImg
     },
     {

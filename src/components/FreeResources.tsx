@@ -1,31 +1,78 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, BookOpen, Video, FileText } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Download, BookOpen, Video, FileText, Mail, CheckCircle2 } from "lucide-react";
 import { Newsletter } from "./Newsletter";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const FreeResources = () => {
+  const [leadEmail, setLeadEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [guideRequested, setGuideRequested] = useState(false);
+  const { toast } = useToast();
+
+  const handleGuideRequest = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from("intake_forms").insert({
+        user_id: crypto.randomUUID(),
+        email: leadEmail,
+        full_name: "Free Guide Request",
+        form_type: "free-guide",
+      });
+      if (error) throw error;
+
+      try {
+        await supabase.functions.invoke("send-form-notification", {
+          body: {
+            formType: "free-guide",
+            name: "Free Guide Request",
+            email: leadEmail,
+          },
+        });
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+      }
+
+      setGuideRequested(true);
+      toast({
+        title: "Guide on the way! 📘",
+        description: "Check your inbox for the Mindset Transformation Guide.",
+      });
+      setLeadEmail("");
+    } catch {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const resources = [
     {
       icon: FileText,
       title: "Mindset Transformation Guide",
       description: "7-day action plan to shift your mindset and build unshakeable confidence",
-      cta: "Download Free Guide",
-      href: "#newsletter"
+      type: "lead-magnet" as const,
     },
     {
       icon: Video,
       title: "Free Training Videos",
-      description: "Watch my most popular training sessions on mindset, wealth, and masculinity",
-      cta: "Watch Now",
-      href: "#videos"
+      description: "Watch training sessions on mindset, wealth, spirituality, fitness, and masculinity",
+      type: "videos" as const,
     },
     {
       icon: BookOpen,
       title: "Weekly Newsletter",
       description: "Get exclusive insights, strategies, and early access to programs delivered weekly",
-      cta: "Subscribe Free",
-      href: "#newsletter"
-    }
+      type: "newsletter" as const,
+    },
   ];
 
   return (
@@ -55,16 +102,43 @@ const FreeResources = () => {
                 <CardDescription className="text-base">{resource.description}</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button variant="outline" className="w-full" asChild>
-                  <a href={resource.href}>{resource.cta}</a>
-                </Button>
+                {resource.type === "lead-magnet" && (
+                  <>
+                    {guideRequested ? (
+                      <div className="flex items-center gap-2 text-primary">
+                        <CheckCircle2 size={20} />
+                        <span className="font-medium">Guide sent! Check your inbox.</span>
+                      </div>
+                    ) : (
+                      <form onSubmit={handleGuideRequest} className="flex gap-2">
+                        <Input
+                          type="email"
+                          placeholder="Your email"
+                          value={leadEmail}
+                          onChange={(e) => setLeadEmail(e.target.value)}
+                          required
+                          className="flex-1"
+                        />
+                        <Button type="submit" disabled={isSubmitting} variant="default" size="sm">
+                          {isSubmitting ? "..." : "Get It Free"}
+                        </Button>
+                      </form>
+                    )}
+                  </>
+                )}
+                {resource.type === "videos" && (
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="#videos">Watch Free Videos</a>
+                  </Button>
+                )}
+                {resource.type === "newsletter" && (
+                  <Button variant="outline" className="w-full" asChild>
+                    <a href="#newsletter">Subscribe Free</a>
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        <div className="max-w-2xl mx-auto" id="newsletter">
-          <Newsletter />
         </div>
 
         <div className="text-center mt-12">

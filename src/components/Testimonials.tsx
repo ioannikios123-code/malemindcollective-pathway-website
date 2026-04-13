@@ -11,6 +11,12 @@ const michaelImg = "https://images.pexels.com/photos/1024311/pexels-photo-102431
 const chrisImg = "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=200";
 const kevinImg = "https://images.pexels.com/photos/936119/pexels-photo-936119.jpeg?auto=compress&cs=tinysrgb&w=200";
 const brandonImg = "https://images.pexels.com/photos/2380795/pexels-photo-2380795.jpeg?auto=compress&cs=tinysrgb&w=200";
+const tylerImg = "https://images.pexels.com/photos/1300402/pexels-photo-1300402.jpeg?auto=compress&cs=tinysrgb&w=200";
+const danielImg = "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=200";
+const anthonyImg = "https://images.pexels.com/photos/1484794/pexels-photo-1484794.jpeg?auto=compress&cs=tinysrgb&w=200";
+const jasonImg = "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=200";
+const ryanImg = "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=200";
+const derekImg = "https://images.pexels.com/photos/1121796/pexels-photo-1121796.jpeg?auto=compress&cs=tinysrgb&w=200";
 
 const Testimonials = () => {
   const testimonials = [
@@ -94,6 +100,60 @@ const Testimonials = () => {
       rating: 5,
       transformation: "Complete life rebuild post-divorce",
       metric: "Total transformation",
+    },
+    {
+      name: "Tyler Washington",
+      age: "23, Digital Marketer",
+      image: tylerImg,
+      content: "Everyone said dropping out of college was the worst decision of my life. MaleMindCollective showed me a degree isn't the only path to success.",
+      rating: 5,
+      transformation: "Built 6-figure agency without a degree",
+      metric: "$120K first year",
+    },
+    {
+      name: "Daniel Park",
+      age: "34, Freelance Designer",
+      image: danielImg,
+      content: "I was undercharging, overworking, and burning out. The wealth and mindset pillars taught me my worth and how to command it.",
+      rating: 5,
+      transformation: "5x'd freelance rates, halved hours",
+      metric: "5x rate increase",
+    },
+    {
+      name: "Anthony Reed",
+      age: "30, Teacher & Side Hustler",
+      image: anthonyImg,
+      content: "Teaching is my passion but the pay was crushing me. The wealth pillar helped me build a tutoring business that now earns more than my salary.",
+      rating: 5,
+      transformation: "Built $8K/mo side income",
+      metric: "$8K/mo extra income",
+    },
+    {
+      name: "Jason Mitchell",
+      age: "36, Construction Manager",
+      image: jasonImg,
+      content: "I was physically strong but mentally weak. The mindset and spiritual pillars gave me discipline and purpose I never knew I was missing.",
+      rating: 5,
+      transformation: "Promoted twice, found inner peace",
+      metric: "2 promotions in 1 year",
+    },
+    {
+      name: "Ryan Foster",
+      age: "26, Tech Sales Rep",
+      image: ryanImg,
+      content: "The accountability and brotherhood in this community pushed me past every limit I thought I had. My income and confidence skyrocketed.",
+      rating: 5,
+      transformation: "Hit President's Club, top 1% performer",
+      metric: "$200K total comp",
+    },
+    {
+      name: "Derek Campbell",
+      age: "42, Recovering Addict",
+      image: derekImg,
+      content: "After getting sober, I needed to rebuild everything. This program gave me the structure, community, and purpose to create a life worth living.",
+      rating: 5,
+      transformation: "3 years sober, new career, new life",
+      metric: "Complete reinvention",
     },
   ];
 

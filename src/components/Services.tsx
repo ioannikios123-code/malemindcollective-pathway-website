@@ -15,7 +15,7 @@ const Services = () => {
       title: "1-on-1 Coaching",
       description: "Personal transformation sessions tailored to your specific needs and goals",
       features: ["Weekly 60-min sessions", "Custom action plans", "24/7 text support", "Goal tracking"],
-      price: "From $297/month",
+      price: "Starting from $297/mo",
       image: coachingImg
     },
     {
@@ -23,7 +23,7 @@ const Services = () => {
       title: "Digital Courses",
       description: "Comprehensive online programs covering all aspects of masculine development",
       features: ["5 Core modules", "Lifetime access", "Downloadable resources", "Community access"],
-      price: "From $197 one-time",
+      price: "Starting from $197",
       image: coursesImg
     },
     {
@@ -31,7 +31,7 @@ const Services = () => {
       title: "Masterclasses",
       description: "Deep-dive sessions on specific topics like wealth building and mindset",
       features: ["Live Q&A sessions", "Replay access", "PDF workbooks", "Implementation guides"],
-      price: "From $97 each",
+      price: "Starting from $97",
       image: masterclassImg
     },
     {
@@ -39,7 +39,7 @@ const Services = () => {
       title: "Group Programs",
       description: "Small cohort coaching for accountability and brotherhood",
       features: ["8-week programs", "Max 10 participants", "Weekly group calls", "Peer support"],
-      price: "From $497/program",
+      price: "Starting from $497",
       image: groupImg
     },
     {
@@ -47,7 +47,7 @@ const Services = () => {
       title: "Wealth Building Intensive",
       description: "Focused program on passive income, investments, and financial freedom",
       features: ["Investment strategies", "Passive income blueprints", "Budgeting systems", "Wealth mindset"],
-      price: "From $697 one-time",
+      price: "Starting from $697",
       image: wealthImg
     },
     {
@@ -55,7 +55,7 @@ const Services = () => {
       title: "90-Day Transformation",
       description: "Complete lifestyle overhaul covering all 5 pillars of development",
       features: ["All-inclusive program", "Personal coach", "Daily check-ins", "Guarantee results"],
-      price: "From $1,997",
+      price: "Starting from $1,997",
       image: transformationImg
     }
   ];

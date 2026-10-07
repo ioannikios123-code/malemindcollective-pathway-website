@@ -3,9 +3,9 @@ import { Users, Award, Globe, TrendingUp } from "lucide-react";
 const MediaMentions = () => {
   const stats = [
     { icon: Users, value: "500+", label: "Men Coached" },
-    { icon: Globe, value: "35+", label: "Countries Reached" },
+    { icon: Globe, value: "1-on-1", label: "Personal Coaching" },
     { icon: Award, value: "5", label: "Pillars of Growth" },
-    { icon: TrendingUp, value: "95%", label: "Client Satisfaction" },
+    { icon: TrendingUp, value: "4.9/5", label: "Average Client Rating" },
   ];
 
   return (
@@ -18,7 +18,7 @@ const MediaMentions = () => {
           {stats.map((s) => (
             <div
               key={s.label}
-              className="flex items-center gap-3 opacity-70 hover:opacity-100 transition-smooth cursor-default"
+              className="flex items-center gap-3"
             >
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                 <s.icon className="text-primary" size={20} />

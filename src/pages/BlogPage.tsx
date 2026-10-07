@@ -84,7 +84,7 @@ const BlogPage = () => {
         <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/40 to-background">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Blog & <span className="bg-gradient-primary bg-clip-text text-transparent">Insights</span>
+              Blog & <span className="text-primary">Insights</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Discover strategies, success stories, and insights to help you become the best version of yourself.

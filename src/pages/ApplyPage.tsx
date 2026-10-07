@@ -101,7 +101,7 @@ const ApplyPage = () => {
             <div className="space-y-4">
               <h1 className="text-3xl md:text-5xl font-bold">
                 Give Us 7 Minutes And We'll Reveal The{" "}
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                <span className="text-primary">
                   Exact Framework
                 </span>{" "}
                 We Use To Transform Men Into Their Best Selves

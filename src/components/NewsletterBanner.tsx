@@ -94,7 +94,7 @@ export const NewsletterBanner = () => {
             
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Get Weekly Insights on
-              <span className="bg-gradient-primary bg-clip-text text-transparent block mt-2">
+              <span className="text-primary block mt-2">
                 Mindset, Wealth & Purpose
               </span>
             </h2>

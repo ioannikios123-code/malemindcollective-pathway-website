@@ -35,7 +35,7 @@ const FounderPage = () => {
             <div className="max-w-3xl mx-auto text-center">
               <p className="text-primary font-medium text-sm uppercase tracking-widest mb-3">Meet the Founder</p>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Building Men Who Build <span className="bg-gradient-primary bg-clip-text text-transparent">Legacies</span>
+                Building Men Who Build <span className="text-primary">Legacies</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed mb-4 max-w-2xl mx-auto">
                 I created MaleMindCollective because I lived the pain of having no roadmap. No mentor. No brotherhood.

@@ -38,7 +38,7 @@ const Hero = () => {
 
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
             Transform Your Mindset.
-            <span className="bg-gradient-primary bg-clip-text text-transparent block mt-2">
+            <span className="text-primary block mt-2">
               Build Your Best Life.
             </span>
           </h1>
@@ -77,15 +77,15 @@ const Hero = () => {
           {/* Social Proof Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">10,000+</div>
+              <div className="text-4xl font-bold text-primary mb-2">10,000+</div>
               <div className="text-muted-foreground">Men Transformed</div>
             </div>
             <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">95%</div>
+              <div className="text-4xl font-bold text-primary mb-2">95%</div>
               <div className="text-muted-foreground">Success Rate</div>
             </div>
             <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-2">5 Years</div>
+              <div className="text-4xl font-bold text-primary mb-2">5 Years</div>
               <div className="text-muted-foreground">Proven System</div>
             </div>
           </div>

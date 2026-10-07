@@ -18,7 +18,7 @@ import { CustomerSupportChat } from "@/components/CustomerSupportChat";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background pt-16">
+    <div className="homepage min-h-screen bg-background pt-16 lg:pt-[72px]">
       <Header />
       <main>
         <Hero />

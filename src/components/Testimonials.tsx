@@ -1,4 +1,4 @@
-import { Star, ArrowRight, Quote } from "lucide-react";
+import { ArrowRight, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -162,14 +162,13 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Star size={16} className="fill-current" />
-            Verified Success Stories
+            Growth & Transformation
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Real Men, <span className="text-primary">Real Results</span>
+            Personal Growth, <span className="text-primary">New Possibilities</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Join 500+ men who have transformed their lives through our proven system
+            These illustrative stories use sample names, stock portraits, and example outcomes—not verified client testimonials.
           </p>
         </div>
 
@@ -193,13 +192,6 @@ const Testimonials = () => {
                   <p className="font-semibold text-foreground">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.age}</p>
                 </div>
-              </div>
-
-              {/* Stars */}
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="text-primary fill-current" size={16} />
-                ))}
               </div>
 
               {/* Content */}

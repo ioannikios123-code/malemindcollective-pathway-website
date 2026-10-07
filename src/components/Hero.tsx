@@ -29,14 +29,11 @@ const Hero = () => {
         <div className="max-w-5xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-8 border border-primary/20">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
+            
             <span className="text-sm font-semibold">Coaching for Men Who Want Real Transformation</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl mb-8 leading-tight">
             Transform Your Mindset.
             <span className="text-primary block mt-2">
               Build Your Best Life.
@@ -59,8 +56,8 @@ const Hero = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button variant="hero" size="lg" className="text-lg px-10 py-7 shadow-glow" asChild>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
+            <Button variant="hero" size="lg" className="text-lg px-10 py-7" asChild>
               <a href="#intake" aria-label="Book your free discovery call">
                 Book a Free Discovery Call
                 <ArrowRight className="ml-2" size={20} />
@@ -72,22 +69,6 @@ const Hero = () => {
                 Get Free Resources
               </a>
             </Button>
-          </div>
-
-          {/* Social Proof Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">10,000+</div>
-              <div className="text-muted-foreground">Men Transformed</div>
-            </div>
-            <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">95%</div>
-              <div className="text-muted-foreground">Success Rate</div>
-            </div>
-            <div className="bg-card/60 backdrop-blur-sm p-6 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
-              <div className="text-4xl font-bold text-primary mb-2">5 Years</div>
-              <div className="text-muted-foreground">Proven System</div>
-            </div>
           </div>
         </div>
       </div>

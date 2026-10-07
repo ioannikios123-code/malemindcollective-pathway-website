@@ -91,8 +91,8 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 lg:h-[72px] items-center justify-between gap-3">
           <Link to="/" className="text-xl font-bold text-primary">
             MaleMindCollective
           </Link>
@@ -153,17 +153,21 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden"
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden shrink-0"
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden mt-4 pb-4 border-t border-border bg-background">
+          <nav className="lg:hidden max-h-[calc(100dvh-4rem)] overflow-y-auto pb-4 border-t border-border bg-background">
             <div className="flex flex-col space-y-3 pt-4">
               {allNav.map((item) =>
                 item.type === "section" ? (

@@ -1,18 +1,16 @@
-import { Users, Award, Globe, TrendingUp } from "lucide-react";
+import { Award, Globe } from "lucide-react";
 
 const MediaMentions = () => {
   const stats = [
-    { icon: Users, value: "500+", label: "Men Coached" },
     { icon: Globe, value: "1-on-1", label: "Personal Coaching" },
     { icon: Award, value: "5", label: "Pillars of Growth" },
-    { icon: TrendingUp, value: "4.9/5", label: "Average Client Rating" },
   ];
 
   return (
     <section className="py-10 border-y border-border/50 bg-card/30">
       <div className="container mx-auto px-4">
         <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground mb-8 font-medium">
-          Trusted by Men Worldwide
+          Your Path to Personal Growth
         </p>
         <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
           {stats.map((s) => (

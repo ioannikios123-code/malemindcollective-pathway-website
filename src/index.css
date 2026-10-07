@@ -141,6 +141,10 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
+  .homepage [id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

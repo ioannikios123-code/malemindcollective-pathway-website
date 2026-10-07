@@ -98,7 +98,7 @@ const Contact = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-4 break-words">
                   Email: malemindcollective@gmail.com
                 </p>
                 <Button variant="outline" className="w-full" asChild>
@@ -122,16 +122,16 @@ const Contact = () => {
                   key={index}
                   className="bg-gradient-card p-6 rounded-lg border border-border shadow-card hover:shadow-premium transition-smooth cursor-pointer group"
                 >
-                  <div className="flex items-center space-x-4">
+                  <div className="flex flex-wrap items-center gap-4">
                     <div className="bg-primary/10 p-3 rounded-lg">
                       <social.icon className={`${social.color} transition-smooth`} size={24} />
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0 break-words">
                       <h4 className="font-semibold text-lg">{social.name}</h4>
                       <p className="text-primary font-medium">{social.handle}</p>
                       <p className="text-muted-foreground text-sm">{social.description}</p>
                     </div>
-                    <Button variant="ghost" size="sm" className="opacity-0 group-hover:opacity-100 transition-smooth">
+                    <Button variant="ghost" size="sm" className="shrink-0 transition-smooth">
                       Follow
                     </Button>
                   </div>

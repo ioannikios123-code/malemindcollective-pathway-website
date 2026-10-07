@@ -168,7 +168,7 @@ export const CustomerSupportChat = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-[380px] h-[600px] flex flex-col shadow-2xl z-50 border-2">
+        <Card className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-[380px] max-w-[calc(100vw-2rem)] h-[600px] max-h-[calc(100dvh-2rem)] flex flex-col shadow-2xl z-50 border-2">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center gap-2">
@@ -182,6 +182,7 @@ export const CustomerSupportChat = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
+              aria-label="Close customer support chat"
               className="h-8 w-8 text-primary-foreground hover:bg-primary-foreground/20"
             >
               <X className="h-4 w-4" />
@@ -189,7 +190,7 @@ export const CustomerSupportChat = () => {
           </div>
 
           {/* Messages */}
-          <ScrollArea className="flex-1 p-4" ref={scrollRef}>
+          <ScrollArea className="flex-1 min-h-0 p-4" ref={scrollRef}>
             <div className="space-y-4">
               {messages.map((message, index) => (
                 <div
@@ -205,7 +206,7 @@ export const CustomerSupportChat = () => {
                         : "bg-muted"
                     }`}
                   >
-                    <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+                    <p className="text-sm whitespace-pre-wrap break-words">{message.content}</p>
                   </div>
                 </div>
               ))}
@@ -227,7 +228,7 @@ export const CustomerSupportChat = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Type your message..."
                 disabled={isLoading}
-                className="flex-1"
+                className="flex-1 min-w-0"
               />
               <Button
                 type="submit"

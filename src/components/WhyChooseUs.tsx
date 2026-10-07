@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Men Choose
-            <span className="bg-gradient-primary bg-clip-text text-transparent block mt-2">
+            <span className="text-primary block mt-2">
               MaleMindCollective
             </span>
           </h2>

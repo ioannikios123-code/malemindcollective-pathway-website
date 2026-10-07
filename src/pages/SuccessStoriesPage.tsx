@@ -206,7 +206,7 @@ const SuccessStoriesPage = () => {
                 Real Transformations, Real Men
               </div>
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Success Stories & <span className="bg-gradient-primary bg-clip-text text-transparent">Transformations</span>
+                Success Stories & <span className="text-primary">Transformations</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
                 Every man who walks through our doors has a story. Here are the men who chose to rewrite theirs — and the results speak for themselves.

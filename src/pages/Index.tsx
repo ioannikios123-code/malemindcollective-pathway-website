@@ -1,15 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MediaMentions from "@/components/MediaMentions";
-import TrustBadges from "@/components/TrustBadges";
-import Stats from "@/components/Stats";
 import About from "@/components/About";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Services from "@/components/Services";
 import Pillars from "@/components/Pillars";
 import Testimonials from "@/components/Testimonials";
 import VideoShowcase from "@/components/VideoShowcase";
-import NewsletterBanner from "@/components/NewsletterBanner";
 import BlogPreview from "@/components/BlogPreview";
 import FreeResources from "@/components/FreeResources";
 import FAQ from "@/components/FAQ";
@@ -26,19 +23,16 @@ const Index = () => {
       <main>
         <Hero />
         <MediaMentions />
-        <TrustBadges />
-        <Stats />
         <About />
         <WhyChooseUs />
-        <Services />
         <Pillars />
+        <Services />
         <Testimonials />
         <div id="videos">
           <VideoShowcase />
         </div>
-        <NewsletterBanner />
-        <BlogPreview />
         <FreeResources />
+        <BlogPreview />
         <FAQ />
         <IntakeForm />
         <Contact />

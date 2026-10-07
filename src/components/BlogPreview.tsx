@@ -84,7 +84,7 @@ const BlogPreview = () => {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             From the
-            <span className="bg-gradient-primary bg-clip-text text-transparent"> Blog</span>
+            <span className="text-primary"> Blog</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Strategies, success stories, and insights to fuel your transformation journey.

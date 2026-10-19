@@ -29,8 +29,8 @@ const WhyChooseUs = () => {
     },
     {
       icon: Award,
-      title: "Proven Results",
-      description: "Over 10,000 men have transformed their lives through our programs with a 95% satisfaction rate."
+      title: "Practical Next Steps",
+      description: "Build a personal growth plan with clear goals, actionable habits, and support for your next steps."
     }
   ];
 
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Men Choose
-            <span className="text-primary block mt-2">
+            <span className="text-primary block mt-2 text-3xl sm:text-4xl md:text-5xl">
               MaleMindCollective
             </span>
           </h2>

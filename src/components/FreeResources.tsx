@@ -1,64 +1,13 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Download, BookOpen, Video, FileText, Mail, CheckCircle2 } from "lucide-react";
-import { Newsletter } from "./Newsletter";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { Download, BookOpen, Video, FileText } from "lucide-react";
 
 const FreeResources = () => {
-  const [leadEmail, setLeadEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [guideRequested, setGuideRequested] = useState(false);
-  const { toast } = useToast();
-
-  const handleGuideRequest = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    try {
-      const { error } = await supabase.from("intake_forms").insert({
-        user_id: crypto.randomUUID(),
-        email: leadEmail,
-        full_name: "Free Guide Request",
-        form_type: "free-guide",
-      });
-      if (error) throw error;
-
-      try {
-        await supabase.functions.invoke("send-form-notification", {
-          body: {
-            formType: "free-guide",
-            name: "Free Guide Request",
-            email: leadEmail,
-          },
-        });
-      } catch (emailError) {
-        console.error("Email notification failed:", emailError);
-      }
-
-      setGuideRequested(true);
-      toast({
-        title: "Guide on the way! 📘",
-        description: "Check your inbox for the Mindset Transformation Guide.",
-      });
-      setLeadEmail("");
-    } catch {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   const resources = [
     {
       icon: FileText,
       title: "Mindset Transformation Guide",
-      description: "7-day action plan to shift your mindset and build unshakeable confidence",
+      description: "A practical 7-day workbook with reflection prompts, daily actions and a weekly review. Free PDF, no email required.",
       type: "lead-magnet" as const,
     },
     {
@@ -103,28 +52,9 @@ const FreeResources = () => {
               </CardHeader>
               <CardContent>
                 {resource.type === "lead-magnet" && (
-                  <>
-                    {guideRequested ? (
-                      <div className="flex items-center gap-2 text-primary">
-                        <CheckCircle2 size={20} />
-                        <span className="font-medium">Guide sent! Check your inbox.</span>
-                      </div>
-                    ) : (
-                      <form onSubmit={handleGuideRequest} className="flex gap-2">
-                        <Input
-                          type="email"
-                          placeholder="Your email"
-                          value={leadEmail}
-                          onChange={(e) => setLeadEmail(e.target.value)}
-                          required
-                          className="flex-1"
-                        />
-                        <Button type="submit" disabled={isSubmitting} variant="default" size="sm">
-                          {isSubmitting ? "..." : "Get It Free"}
-                        </Button>
-                      </form>
-                    )}
-                  </>
+                  <Button asChild className="w-full">
+                    <a href="/downloads/mindset-transformation-guide.pdf" download="MaleMindCollective-Mindset-Guide.pdf"><Download size={18} className="mr-2" />Download Free Guide</a>
+                  </Button>
                 )}
                 {resource.type === "videos" && (
                   <Button variant="outline" className="w-full" asChild>

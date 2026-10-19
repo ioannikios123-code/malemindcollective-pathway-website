@@ -59,6 +59,48 @@ export type Database = {
         }
         Relationships: []
       }
+      booking_requests: {
+        Row: {
+          availability: string
+          created_at: string
+          email: string
+          email_id: string | null
+          email_status: string
+          full_name: string
+          goals: string
+          id: string
+          ip_hash: string
+          phone: string | null
+          program: string
+        }
+        Insert: {
+          availability: string
+          created_at?: string
+          email: string
+          email_id?: string | null
+          email_status?: string
+          full_name: string
+          goals: string
+          id?: string
+          ip_hash: string
+          phone?: string | null
+          program: string
+        }
+        Update: {
+          availability?: string
+          created_at?: string
+          email?: string
+          email_id?: string | null
+          email_status?: string
+          full_name?: string
+          goals?: string
+          id?: string
+          ip_hash?: string
+          phone?: string | null
+          program?: string
+        }
+        Relationships: []
+      }
       course_materials: {
         Row: {
           course_id: string | null

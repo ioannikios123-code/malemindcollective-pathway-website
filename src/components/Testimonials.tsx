@@ -223,7 +223,7 @@ const Testimonials = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/success-stories">
-                <Button variant="hero" className="gap-2">
+                <Button variant="hero" className="gap-2 w-full h-auto min-h-10 whitespace-normal py-2 hover:scale-100">
                   Read Full Success Stories <ArrowRight size={16} />
                 </Button>
               </Link>

@@ -1,7 +1,9 @@
-import { Award, Globe } from "lucide-react";
+import { Award, Globe, Users } from "lucide-react";
+import { coachingOffer } from '@/lib/coaching-offer';
 
 const MediaMentions = () => {
   const stats = [
+    { icon: Users, value: String(coachingOffer.peopleCoached), label: "People Coached" },
     { icon: Globe, value: "1-on-1", label: "Personal Coaching" },
     { icon: Award, value: "5", label: "Pillars of Growth" },
   ];

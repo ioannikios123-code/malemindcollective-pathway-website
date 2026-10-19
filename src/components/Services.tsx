@@ -54,7 +54,7 @@ const Services = () => {
       icon: Zap,
       title: "90-Day Transformation",
       description: "Complete lifestyle overhaul covering all 5 pillars of development",
-      features: ["All-inclusive program", "Personal coach", "Daily check-ins", "Guarantee results"],
+      features: ["All-inclusive program", "Personal coach", "Daily check-ins", "Personal growth goals"],
       price: "Starting from $1,997",
       image: transformationImg
     }
@@ -132,7 +132,7 @@ const Services = () => {
             Not sure which program is right for you?
           </p>
           <Button variant="hero" size="lg" asChild>
-            <a href="#contact">Schedule Free Consultation</a>
+            <a href="/coaching#booking">Request Free Consultation</a>
           </Button>
         </div>
       </div>

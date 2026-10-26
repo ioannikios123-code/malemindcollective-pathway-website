@@ -10,7 +10,7 @@ import VideoShowcase from "@/components/VideoShowcase";
 import BlogPreview from "@/components/BlogPreview";
 import FreeResources from "@/components/FreeResources";
 import FAQ from "@/components/FAQ";
-import IntakeForm from "@/components/IntakeForm";
+import BookingInquiryForm from "@/components/BookingInquiryForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -34,7 +34,7 @@ const Index = () => {
         <FreeResources />
         <BlogPreview />
         <FAQ />
-        <IntakeForm />
+        <section id="intake" className="py-20"><div className="container mx-auto px-4 max-w-3xl"><h2 className="text-3xl md:text-4xl mb-4">Book Your Free Discovery Call</h2><p className="text-muted-foreground mb-8">Tell us about your goals and preferred times. Your call is confirmed after we agree on a time together.</p><BookingInquiryForm /></div></section>
         <Contact />
       </main>
       <Footer />

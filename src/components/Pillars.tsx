@@ -137,7 +137,7 @@ const Pillars = () => {
               <a href="#contact" className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-premium hover:scale-105 transform transition-smooth text-center">
                 Start Your Journey Today
               </a>
-              <a href="#contact" className="border border-primary/20 bg-transparent text-foreground px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-smooth text-center">
+              <a href="/downloads/mindset-transformation-guide.pdf" download="MaleMindCollective-Mindset-Guide.pdf" className="border border-primary/20 bg-transparent text-foreground px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-smooth text-center">
                 Download Free Guide
               </a>
             </div>

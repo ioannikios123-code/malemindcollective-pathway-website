@@ -1,77 +1,48 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-main.jpg";
 
 const Hero = () => {
-  const benefits = [
-    "Build unshakeable confidence",
-    "Find clarity and purpose",
-    "Achieve meaningful success"
-  ];
-
   return (
-    <section id="home" className="min-h-[min(48rem,calc(100svh-9rem))] py-12 md:py-16 flex items-center relative overflow-hidden" role="banner" aria-label="Hero section">
-      {/* Background Image */}
+    <section id="home" className="min-h-[min(46rem,calc(100svh-9rem))] py-16 md:py-20 flex items-center relative overflow-hidden" aria-label="Introduction">
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Powerful masculine figure representing transformation and success"
-          className="w-full h-full object-cover opacity-25"
+          alt=""
+          className="w-full h-full object-cover opacity-20"
           loading="eager"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-gradient-hero"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/40"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 md:mb-8 border border-primary/20">
-            
-            <span className="text-sm font-semibold">Coaching for Men Who Want Real Transformation</span>
-          </div>
+        <div className="max-w-3xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6">Male Mind Collective</p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl mb-6 md:mb-8 leading-tight">
-            Transform Your Mindset.
-            <span className="text-primary block mt-2">
-              Build Your Best Life.
-            </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl mb-6 leading-[1.1]">
+            For men who feel lost,
+            <span className="text-primary block mt-2">and are ready to find their way.</span>
           </h1>
-          
-          <p className="text-lg md:text-xl lg:text-2xl mb-6 text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Are you a man feeling stuck, lacking confidence, or searching for direction? 
-            I help men achieve meaningful success through <span className="text-foreground font-medium">balanced personal growth</span>—not 
-            quick fixes, but real transformation.
+
+          <p className="text-lg md:text-xl mb-10 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Personal coaching and guidance to build discipline, confidence and purpose —
+            one honest, practical step at a time.
           </p>
 
-          {/* Benefits */}
-          <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-8 md:mb-10">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2 text-foreground/90">
-                <CheckCircle className="text-primary shrink-0" size={18} />
-                <span>{benefit}</span>
-              </div>
-            ))}
-          </div>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="w-full sm:w-auto h-auto min-h-14 whitespace-normal text-base lg:text-lg px-4 lg:px-10 py-4 hover:scale-100" asChild>
-              <a href="#intake" aria-label="Book your free discovery call">
+            <Button variant="hero" size="lg" className="w-full sm:w-auto h-auto min-h-14 text-base px-8 py-4 hover:scale-100" asChild>
+              <a href="#intake">
                 Book a Free Discovery Call
-                <ArrowRight className="ml-2" size={20} />
+                <ArrowRight className="ml-2" size={18} />
               </a>
             </Button>
-            <Button variant="outline" size="lg" className="w-full sm:w-auto h-auto min-h-14 whitespace-normal text-base lg:text-lg px-4 lg:px-8 py-4 border-primary/30" asChild>
-              <a href="#free-resources" aria-label="Get free mindset resources">
-                <PlayCircle className="mr-2" size={20} />
-                Get Free Resources
-              </a>
+            <Button variant="outline" size="lg" className="w-full sm:w-auto h-auto min-h-14 text-base px-8 py-4 border-primary/30" asChild>
+              <a href="#pillars">Explore the 5 Pillars</a>
             </Button>
           </div>
         </div>
       </div>
-
     </section>
   );
 };

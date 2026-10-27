@@ -1,147 +1,107 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Heart, Dumbbell, DollarSign, Shield } from "lucide-react";
+import { Brain, Heart, Dumbbell, Landmark, Shield } from "lucide-react";
 import mindsetImg from "@/assets/pillar-mindset.jpg";
 import spiritualImg from "@/assets/pillar-spiritual.jpg";
 import physicalImg from "@/assets/pillar-physical.jpg";
 import wealthImg from "@/assets/pillar-wealth.jpg";
 import masculinityImg from "@/assets/pillar-masculinity.jpg";
 
-const Pillars = () => {
-  const pillars = [
-    {
-      icon: Brain,
-      title: "Mindset Mastery",
-      description: "Develop unshakeable confidence and mental resilience",
-      image: mindsetImg,
-      details: [
-        "Overcome limiting beliefs and self-doubt",
-        "Build unstoppable confidence in any situation",
-        "Master emotional intelligence and self-control",
-        "Develop a growth mindset for continuous improvement"
-      ]
-    },
-    {
-      icon: Heart,
-      title: "Spiritual Foundation",
-      description: "Connect with your deeper purpose and meaning",
-      image: spiritualImg,
-      details: [
-        "Discover your life's true purpose and calling",
-        "Develop inner peace and spiritual practices",
-        "Build strong moral character and integrity",
-        "Create meaningful connections with others"
-      ]
-    },
-    {
-      icon: Dumbbell,
-      title: "Physical Excellence",
-      description: "Build a strong, healthy, and attractive physique",
-      image: physicalImg,
-      details: [
-        "Optimize your fitness and nutrition for peak performance",
-        "Develop discipline through physical challenges",
-        "Boost energy and vitality in all areas of life",
-        "Create the body that commands respect"
-      ]
-    },
-    {
-      icon: DollarSign,
-      title: "Wealth Building",
-      description: "Master money and create multiple income streams",
-      image: wealthImg,
-      details: [
-        "Develop a millionaire mindset about money",
-        "Learn proven investment and business strategies",
-        "Create passive income streams that work for you",
-        "Build generational wealth and financial security"
-      ]
-    },
-    {
-      icon: Shield,
-      title: "Modern Masculinity",
-      description: "Embody authentic masculine leadership and strength",
-      image: masculinityImg,
-      details: [
-        "Understand and embrace healthy masculine traits",
-        "Develop leadership skills in all areas of life",
-        "Learn to be a protector and provider",
-        "Build authentic relationships and attract quality people"
-      ]
-    }
-  ];
+const pillars = [
+  {
+    icon: Brain,
+    title: "Mindset Mastery",
+    image: mindsetImg,
+    purpose: "Build a mind that works for you, not against you.",
+    challenge: "Self-doubt, overthinking, lack of discipline.",
+    growth: "Clear thinking, emotional control and steady confidence.",
+  },
+  {
+    icon: Heart,
+    title: "Spiritual Foundation",
+    image: spiritualImg,
+    purpose: "Ground your life in values, meaning and inner peace.",
+    challenge: "Emptiness, restlessness, no sense of purpose.",
+    growth: "A clear sense of who you are and what you stand for.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Physical Excellence",
+    image: physicalImg,
+    purpose: "Treat your body as the base for everything else.",
+    challenge: "Low energy, poor habits, inconsistency.",
+    growth: "Sustainable training, nutrition and daily discipline.",
+  },
+  {
+    icon: Landmark,
+    title: "Wealth Mastery & Financial Freedom",
+    image: wealthImg,
+    purpose: "Build a responsible, long-term relationship with money.",
+    challenge: "Debt, no budget, uncertainty about the future.",
+    growth: "Budgeting, saving, smart investing and steady progress.",
+  },
+  {
+    icon: Shield,
+    title: "Modern Masculinity",
+    image: masculinityImg,
+    purpose: "Lead with strength, integrity and care.",
+    challenge: "Confusion about identity and what it means to be a man today.",
+    growth: "Healthy leadership, honest relationships and responsibility.",
+  },
+];
 
+const Pillars = () => {
   return (
-    <section id="pillars" className="py-20 bg-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            The 5 Pillars of
-            <span className="text-primary block">Masculine Excellence</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our comprehensive system addresses every aspect of your development as a man. 
-            Master these 5 pillars and transform into the leader you're meant to be.
+    <section id="pillars" className="py-20 md:py-28 bg-secondary/20">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="max-w-2xl mb-14">
+          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-4">The framework</p>
+          <h2 className="text-3xl md:text-5xl mb-5 leading-tight">The Five Pillars</h2>
+          <p className="text-lg text-muted-foreground">
+            Growth in one area supports the others. Every coaching relationship and course is
+            built around these five foundations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {pillars.map((pillar, index) => (
-            <Card 
-              key={index} 
-              className={`bg-gradient-card border-border shadow-card hover:shadow-premium transition-smooth overflow-hidden group ${
-                index === 4 ? 'lg:col-span-2 xl:col-span-1' : ''
-              }`}
+        <div className="space-y-6">
+          {pillars.map((p, i) => (
+            <article
+              key={p.title}
+              className="grid md:grid-cols-[220px_1fr] gap-6 md:gap-8 items-center rounded-lg border border-border bg-card/60 p-4 md:p-5"
             >
-              {/* Pillar Image */}
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={pillar.image} 
-                  alt={pillar.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              <img
+                src={p.image}
+                alt=""
+                loading="lazy"
+                className="w-full h-40 md:h-36 object-cover rounded-md"
+              />
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-sm text-primary tabular-nums">0{i + 1}</span>
+                  <p.icon className="text-primary" size={18} aria-hidden />
+                  <h3 className="text-xl md:text-2xl">{p.title}</h3>
+                </div>
+                <p className="text-foreground/90 mb-4">{p.purpose}</p>
+                <dl className="grid sm:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <dt className="text-xs uppercase tracking-wider text-muted-foreground mb-1">Addresses</dt>
+                    <dd className="text-muted-foreground">{p.challenge}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-xs uppercase tracking-wider text-muted-foreground mb-1">You build</dt>
+                    <dd className="text-muted-foreground">{p.growth}</dd>
+                  </div>
+                </dl>
               </div>
-              
-              <CardHeader className="text-center pb-4">
-                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <pillar.icon className="text-primary" size={32} />
-                </div>
-                <CardTitle className="text-2xl mb-2">{pillar.title}</CardTitle>
-                <CardDescription className="text-muted-foreground text-base">
-                  {pillar.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {pillar.details.map((detail, idx) => (
-                    <div key={idx} className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mr-3 mt-2 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground leading-relaxed">{detail}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+            </article>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <div className="bg-gradient-card p-8 rounded-xl shadow-card max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">
-              Ready to Master All 5 Pillars?
-            </h3>
-            <p className="text-muted-foreground mb-6 text-lg">
-              Join our comprehensive transformation program and work with me directly 
-              to build excellence in every area of your life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#contact" className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:shadow-premium hover:scale-105 transform transition-smooth text-center">
-                Start Your Journey Today
-              </a>
-              <a href="/downloads/mindset-transformation-guide.pdf" download="MaleMindCollective-Mindset-Guide.pdf" className="border border-primary/20 bg-transparent text-foreground px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-smooth text-center">
-                Download Free Guide
-              </a>
-            </div>
-          </div>
+        <div className="mt-12 flex flex-col sm:flex-row gap-4">
+          <a href="#intake" className="bg-primary text-primary-foreground px-8 py-3 rounded-md font-semibold text-center hover:bg-primary/90 transition-colors">
+            Start with a free call
+          </a>
+          <a href="/downloads/mindset-transformation-guide.pdf" download="MaleMindCollective-Mindset-Guide.pdf" className="border border-primary/30 text-foreground px-8 py-3 rounded-md text-center hover:bg-primary/10 transition-colors">
+            Download the free mindset guide
+          </a>
         </div>
       </div>
     </section>

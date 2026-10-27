@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import PortalProgressNotes from "@/components/portal/PortalProgressNotes";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -221,6 +222,8 @@ const DashboardPage = () => {
               </Card>
             )}
           </section>
+
+          {user && <PortalProgressNotes userId={user.id} materials={courseMaterials} />}
 
           {/* Course Materials */}
           {courseMaterials.length > 0 && (

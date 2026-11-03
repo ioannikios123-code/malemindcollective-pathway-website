@@ -57,7 +57,7 @@ const DashboardPage = () => {
       setUser(session?.user ?? null);
       
       if (!session?.user) {
-        navigate("/auth");
+        navigate("/client-login");
       }
     });
 
@@ -66,7 +66,7 @@ const DashboardPage = () => {
       setUser(session?.user ?? null);
       
       if (!session?.user) {
-        navigate("/auth");
+        navigate("/client-login");
       } else {
         fetchUserData(session.user.id);
       }

@@ -142,7 +142,7 @@ const Header = () => {
               </Button>
             ) : (
               <div className="flex items-center gap-2">
-                <Button variant="outline" size="sm" onClick={() => navigate("/auth")}>
+                <Button variant="outline" size="sm" onClick={() => navigate("/client-login")}>
                   Login
                 </Button>
                 <Button variant="hero" size="sm" onClick={() => handleSectionClick("/#intake")}>
@@ -196,7 +196,7 @@ const Header = () => {
                 </Button>
               ) : (
                 <div className="flex flex-col gap-2">
-                  <Button variant="outline" size="sm" className="self-start" onClick={() => { navigate("/auth"); setIsMenuOpen(false); }}>
+                  <Button variant="outline" size="sm" className="self-start" onClick={() => { navigate("/client-login"); setIsMenuOpen(false); }}>
                     Login
                   </Button>
                   <Button variant="hero" size="sm" className="self-start" onClick={() => handleSectionClick("/#intake")}>

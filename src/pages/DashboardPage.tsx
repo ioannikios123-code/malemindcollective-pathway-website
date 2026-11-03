@@ -48,6 +48,7 @@ const DashboardPage = () => {
   const [freeVideos, setFreeVideos] = useState<VideoItem[]>([]);
   const [courseMaterials, setCourseMaterials] = useState<CourseMaterial[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -56,7 +57,7 @@ const DashboardPage = () => {
       setUser(session?.user ?? null);
       
       if (!session?.user) {
-        navigate("/auth");
+        navigate("/client-login");
       }
     });
 
@@ -65,7 +66,7 @@ const DashboardPage = () => {
       setUser(session?.user ?? null);
       
       if (!session?.user) {
-        navigate("/auth");
+        navigate("/client-login");
       } else {
         fetchUserData(session.user.id);
       }
@@ -118,6 +119,9 @@ const DashboardPage = () => {
       setCourseMaterials(materialsData as CourseMaterial[]);
     }
 
+    const { data: adminFlag } = await supabase.rpc("has_role", { _user_id: userId, _role: "admin" });
+    setIsAdmin(!!adminFlag);
+
     setIsLoading(false);
   };
 
@@ -146,6 +150,11 @@ const DashboardPage = () => {
               Welcome, <span className="text-primary">{user?.user_metadata?.full_name || "Member"}</span>
             </h1>
             <p className="text-muted-foreground">Access your courses, videos, and exclusive content</p>
+            {isAdmin && (
+              <Button variant="hero" className="mt-4" onClick={() => navigate("/admin/notes")}>
+                Write coaching notes for clients
+              </Button>
+            )}
           </div>
 
           {/* Quick Actions */}

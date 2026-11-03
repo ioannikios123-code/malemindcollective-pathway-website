@@ -101,6 +101,66 @@ export type Database = {
         }
         Relationships: []
       }
+      client_payments: {
+        Row: {
+          amount: number
+          client_user_id: string
+          created_at: string
+          id: string
+          method: string | null
+          note: string | null
+          paid_on: string
+        }
+        Insert: {
+          amount: number
+          client_user_id: string
+          created_at?: string
+          id?: string
+          method?: string | null
+          note?: string | null
+          paid_on?: string
+        }
+        Update: {
+          amount?: number
+          client_user_id?: string
+          created_at?: string
+          id?: string
+          method?: string | null
+          note?: string | null
+          paid_on?: string
+        }
+        Relationships: []
+      }
+      client_programs: {
+        Row: {
+          client_user_id: string
+          created_at: string
+          id: string
+          monthly_price: number | null
+          program: string
+          start_date: string | null
+          status: string
+        }
+        Insert: {
+          client_user_id: string
+          created_at?: string
+          id?: string
+          monthly_price?: number | null
+          program: string
+          start_date?: string | null
+          status?: string
+        }
+        Update: {
+          client_user_id?: string
+          created_at?: string
+          id?: string
+          monthly_price?: number | null
+          program?: string
+          start_date?: string | null
+          status?: string
+        }
+        Relationships: []
+      }
       coaching_notes: {
         Row: {
           body: string

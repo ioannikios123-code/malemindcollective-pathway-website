@@ -18,6 +18,7 @@ import BlogPostPage from "./pages/BlogPostPage";
 import SuccessStoriesPage from "./pages/SuccessStoriesPage";
 import FounderPage from "./pages/FounderPage";
 import NotFound from "./pages/NotFound";
+import AdminNotesPage from "./pages/AdminNotesPage";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();

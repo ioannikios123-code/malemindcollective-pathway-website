@@ -19,6 +19,7 @@ import SuccessStoriesPage from "./pages/SuccessStoriesPage";
 import FounderPage from "./pages/FounderPage";
 import NotFound from "./pages/NotFound";
 import AdminNotesPage from "./pages/AdminNotesPage";
+import AdminClientsPage from "./pages/AdminClientsPage";
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/portal" element={<DashboardPage />} />
             <Route path="/client-login" element={<AuthPage />} />
             <Route path="/admin/notes" element={<AdminNotesPage />} />
+            <Route path="/admin/clients" element={<AdminClientsPage />} />
             <Route path="/apply" element={<ApplyPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />

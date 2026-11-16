@@ -151,9 +151,9 @@ const DashboardPage = () => {
             </h1>
             <p className="text-muted-foreground">Access your courses, videos, and exclusive content</p>
             {isAdmin && (
-              <Button variant="hero" className="mt-4" onClick={() => navigate("/admin/notes")}>
+              <div className="mt-4 flex flex-wrap gap-3"><Button variant="hero" onClick={() => navigate("/admin/clients")}>Manage clients & payments</Button><Button variant="outline" onClick={() => navigate("/admin/notes")}>
                 Write coaching notes for clients
-              </Button>
+              </Button></div>
             )}
           </div>
 

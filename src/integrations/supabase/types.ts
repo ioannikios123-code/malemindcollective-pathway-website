@@ -62,6 +62,7 @@ export type Database = {
       booking_requests: {
         Row: {
           availability: string
+          client_email_status: string
           created_at: string
           email: string
           email_id: string | null
@@ -75,6 +76,7 @@ export type Database = {
         }
         Insert: {
           availability: string
+          client_email_status?: string
           created_at?: string
           email: string
           email_id?: string | null
@@ -88,6 +90,7 @@ export type Database = {
         }
         Update: {
           availability?: string
+          client_email_status?: string
           created_at?: string
           email?: string
           email_id?: string | null
@@ -110,6 +113,7 @@ export type Database = {
           method: string | null
           note: string | null
           paid_on: string
+          stripe_ref: string | null
         }
         Insert: {
           amount: number
@@ -119,6 +123,7 @@ export type Database = {
           method?: string | null
           note?: string | null
           paid_on?: string
+          stripe_ref?: string | null
         }
         Update: {
           amount?: number
@@ -128,6 +133,7 @@ export type Database = {
           method?: string | null
           note?: string | null
           paid_on?: string
+          stripe_ref?: string | null
         }
         Relationships: []
       }
@@ -140,6 +146,7 @@ export type Database = {
           program: string
           start_date: string | null
           status: string
+          stripe_subscription_id: string | null
         }
         Insert: {
           client_user_id: string
@@ -149,6 +156,7 @@ export type Database = {
           program: string
           start_date?: string | null
           status?: string
+          stripe_subscription_id?: string | null
         }
         Update: {
           client_user_id?: string
@@ -158,6 +166,37 @@ export type Database = {
           program?: string
           start_date?: string | null
           status?: string
+          stripe_subscription_id?: string | null
+        }
+        Relationships: []
+      }
+      client_sessions: {
+        Row: {
+          client_user_id: string
+          created_at: string
+          duration_minutes: number
+          id: string
+          meeting_link: string | null
+          starts_at: string
+          topic: string | null
+        }
+        Insert: {
+          client_user_id: string
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          meeting_link?: string | null
+          starts_at: string
+          topic?: string | null
+        }
+        Update: {
+          client_user_id?: string
+          created_at?: string
+          duration_minutes?: number
+          id?: string
+          meeting_link?: string | null
+          starts_at?: string
+          topic?: string | null
         }
         Relationships: []
       }

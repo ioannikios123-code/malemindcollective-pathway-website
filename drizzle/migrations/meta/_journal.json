@@ -29,6 +29,13 @@
       "when": 1793720669703,
       "tag": "0003_client_programs_payments",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794861455362,
+      "tag": "0004_client_sessions_and_payment_refs",
+      "breakpoints": true
     }
   ]
 }
